@@ -1,0 +1,180 @@
+
+.settings-content {
+    padding: 28px 30px;
+}
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: #7867e9;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+}
+
+.page-heading h2 {
+    font-size: 25px;
+    color: #20243a;
+    margin-bottom: 7px;
+}
+
+.page-heading p {
+    color: #85899b;
+    font-size: 14px;
+}
+
+.settings-card {
+    background: #ffffff;
+    border: 1px solid #e9eaf1;
+    border-radius: 13px;
+    padding: 30px;
+    max-width: 750px;
+    box-shadow: 0 4px 15px rgba(30, 35, 70, 0.04);
+}
+
+.settings-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.settings-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #eeeaff;
+    color: #7564e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.settings-card-heading h2 {
+    font-size: 19px;
+    color: #292d43;
+    margin-bottom: 5px;
+}
+
+.settings-card-heading p {
+    color: #85899b;
+    font-size: 13px;
+}
+
+.settings-divider {
+    height: 1px;
+    background: #ececf2;
+    margin: 25px 0;
+}
+
+.form-group {
+    margin-bottom: 21px;
+}
+
+.form-group label {
+    display: block;
+    color: #34384e;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e2e3ed;
+    border-radius: 8px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.password-wrapper:focus-within {
+    border-color: #7867e9;
+    box-shadow: 0 0 0 3px rgba(120, 103, 233, 0.10);
+}
+
+.password-wrapper input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 13px 14px;
+    font-size: 14px;
+    color: #292d43;
+    background: transparent;
+}
+
+.password-wrapper input::placeholder {
+    color: #a4a6b4;
+}
+
+.toggle-password {
+    border: none;
+    background: transparent;
+    color: #7564e8;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px 15px;
+    cursor: pointer;
+}
+
+.form-group small {
+    display: block;
+    color: #9295a5;
+    font-size: 11px;
+    margin-top: 7px;
+}
+
+.change-password-btn {
+    background: #7564e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 23px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.change-password-btn:hover {
+    background: #6251d2;
+}
+
+.change-password-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.password-message {
+    font-size: 13px;
+    margin: 0 0 17px;
+}
+
+.password-message.success {
+    color: #249653;
+}
+
+.password-message.error {
+    color: #dc4141;
+}
+
+.footer {
+    margin-top: 35px;
+    text-align: center;
+    color: #999dad;
+    font-size: 12px;
+}
+
+@media (max-width: 700px) {
+    .settings-content {
+        padding: 20px 15px;
+    }
+
+    .settings-card {
+        padding: 20px;
+    }
+}

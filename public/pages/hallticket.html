@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Hall Ticket | Apex Student Portal
+    </title>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="/css/hallticket.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="portal-layout">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                A
+            </div>
+
+            <div class="brand-text">
+
+                <h2>
+                    APEX
+                </h2>
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <a
+                href="/pages/dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="/pages/profile.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ○
+                </span>
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+            <div class="academics-wrapper">
+
+
+                <button
+                    type="button"
+                    class="academics-toggle"
+                    id="academicsToggle"
+                >
+
+                    <span class="academics-title-left">
+
+                        <span class="nav-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Academics
+                        </span>
+
+                    </span>
+
+
+                    <span
+                        class="academics-arrow"
+                        id="academicsArrow"
+                    >
+                        ▾
+                    </span>
+
+                </button>
+
+
+                <div
+                    class="academics-submenu show"
+                    id="academicsSubmenu"
+                >
+
+
+                    <a
+                        href="/pages/attendance.html"
+                        class="academic-item"
+                    >
+                        <span class="academic-icon">▣</span>
+                        <span>Attendance</span>
+                    </a>
+
+
+                    <a
+                        href="/pages/courses.html"
+                        class="academic-item"
+                    >
+                        <span class="academic-icon">▤</span>
+                        <span>My Courses</span>
+                    </a>
+
+
+                    <a
+                        href="/pages/marks.html"
+                        class="academic-item"
+                    >
+                        <span class="academic-icon">◈</span>
+                        <span>Marks</span>
+                    </a>
+
+                    
+<a href="/pages/grade-list.html"
+   class="academic-item"
+   data-page="grade-list">
+    <span class="academic-icon">★</span>
+    <span>Grade List</span>
+</a>
+
+
+
+                    <a
+                        href="/pages/fees.html"
+                        class="academic-item"
+                    >
+                        <span class="academic-icon">₹</span>
+                        <span>Fees</span>
+                    </a>
+
+
+                    <a
+                        href="/pages/hall-ticket.html"
+                        class="academic-item active"
+                    >
+                        <span class="academic-icon">▫</span>
+                        <span>Hall Ticket</span>
+                    </a>
+
+
+                    <a
+                        href="/pages/notices.html"
+                        class="academic-item"
+                    >
+                        <span class="academic-icon">!</span>
+                        <span>Notices</span>
+                    </a>
+
+
+                    <a
+                        href="/pages/documents.html"
+                        class="academic-item"
+                    >
+                        <span class="academic-icon">▫</span>
+                        <span>Documents</span>
+                    </a>
+
+                    <a href="#"
+               class="academic-item"
+               data-page="timetable">
+
+                <span class="academic-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+
+            <a
+                href="/pages/settings.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                id="logoutButton"
+                class="nav-item logout-item"
+            >
+
+                <span class="nav-icon">
+                    ↪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+
+            <div class="sidebar-profile">
+
+                <div
+                    class="profile-avatar"
+                    id="sidebarAvatar"
+                >
+                    S
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong id="sidebarName">
+                        Student
+                    </strong>
+
+                    <span id="sidebarEnrollment">
+                        Student
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="profile-more"
+                >
+                    •••
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <header class="top-header">
+
+
+            <div class="header-left">
+
+                <div>
+
+                    <div class="college-name">
+                        APEX INSTITUTE OF TECHNOLOGY
+                    </div>
+
+                    <h1>
+                        Hall Ticket
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <button
+                    type="button"
+                    class="header-icon"
+                >
+                    ♧
+
+                    <span
+                        class="header-notification-dot"
+                    ></span>
+
+                </button>
+
+
+                <div class="header-profile">
+
+
+                    <div
+                        class="header-avatar"
+                        id="headerAvatar"
+                    >
+                        S
+                    </div>
+
+
+                    <div class="header-profile-info">
+
+                        <strong id="headerName">
+                            Student
+                        </strong>
+
+                        <span id="headerEnrollment">
+                            Student
+                        </span>
+
+                    </div>
+
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =====================================
+             HALL TICKET CONTENT
+        ====================================== -->
+
+        <section class="hall-ticket-content">
+
+
+            <div class="hall-ticket-heading">
+
+
+                <div>
+
+                    <div class="hall-ticket-label">
+                        EXAMINATION
+                    </div>
+
+
+                    <h2>
+                        End Semester Hall Ticket
+                    </h2>
+
+
+                    <p>
+                        View your end semester examination schedule.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+           
+
+
+            <!-- SEMESTER SELECTOR -->
+
+            <div class="hall-selector-card">
+
+
+                <div>
+
+                    <h3>
+                        Examination Semester
+                    </h3>
+
+                    <p>
+                        Select a semester to view your hall ticket.
+                    </p>
+
+                </div>
+
+
+                <select
+                    id="semesterSelect"
+                >
+                </select>
+
+
+            </div>
+
+
+            <!-- HALL TICKET -->
+
+            <div
+                id="hallTicketCard"
+                class="hall-ticket-card hidden"
+            >
+
+
+                <div class="hall-ticket-header">
+
+
+                    <div>
+
+                        <div class="hall-ticket-title">
+                            APEX INSTITUTE OF TECHNOLOGY
+                        </div>
+
+                        <h3>
+                            END SEMESTER EXAMINATION
+                        </h3>
+
+                        <p id="hallSemester">
+                            Semester
+                        </p>
+
+                    </div>
+
+
+                    <div class="hall-ticket-badge">
+                        HALL TICKET
+                    </div>
+
+
+                </div>
+
+
+                <!-- STUDENT DETAILS -->
+
+                <div class="ticket-student-details">
+
+
+                    <div>
+
+                        <span>
+                            Name
+                        </span>
+
+                        <strong id="ticketName">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Enrollment No.
+                        </span>
+
+                        <strong id="ticketEnrollment">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Branch
+                        </span>
+
+                        <strong id="ticketBranch">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Section
+                        </span>
+
+                        <strong id="ticketSection">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- EXAM TABLE -->
+
+                <div class="exam-table-container">
+
+
+                    <table class="exam-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    S.No
+                                </th>
+
+                                <th>
+                                    Subject Code
+                                </th>
+
+                                <th>
+                                    Subject
+                                </th>
+
+                                <th>
+                                    Exam Date
+                                </th>
+
+                                <th>
+                                    Time
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="examTableBody">
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+                <div class="ticket-footer">
+
+    
+</div>
+
+<!-- PRINT / DOWNLOAD BUTTON -->
+<div class="hall-ticket-actions">
+
+    <button
+        type="button"
+        id="printHallTicket"
+        class="print-hall-ticket"
+    >
+        🖨 Print / Download Hall Ticket
+    </button>
+
+</div>
+
+
+            </div>
+
+
+            <!-- NO HALL TICKET -->
+
+            <div
+                id="noHallTicket"
+                class="no-hall-ticket hidden"
+            >
+
+                <div class="no-ticket-icon">
+                    🎓
+                </div>
+
+
+                <h3>
+                    Hall Ticket Not Available
+                </h3>
+
+
+                <p id="noHallTicketMessage">
+                    Hall tickets are not available 
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="/js/global.js"></script>
+
+<script src="/js/hallticket.js?v=1"></script>
+
+
+</body>
+
+</html>

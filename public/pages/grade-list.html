@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grade List | Apex Student Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/marks.css">
+
+    <style>
+        .grade-content {
+            padding-bottom: 30px;
+        }
+
+        .grade-heading {
+            margin-bottom: 24px;
+        }
+
+        .grade-heading .marks-label {
+            color: #64748b;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .grade-heading h2 {
+            margin: 0 0 8px;
+        }
+
+        .grade-heading p {
+            color: #64748b;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .grade-student-info {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .grade-info-item {
+            padding: 18px;
+            border-radius: 12px;
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border-color, #e5e7eb);
+            min-width: 0;
+        }
+
+        .grade-info-item span {
+            display: block;
+            color: #64748b;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .grade-info-item strong {
+            display: block;
+            font-size: 15px;
+            overflow-wrap: anywhere;
+        }
+
+        .grade-summary {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .grade-summary-card {
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border-color, #e5e7eb);
+        }
+
+        .grade-summary-card span {
+            display: block;
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .grade-summary-card strong {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .grade-selector-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border-color, #e5e7eb);
+        }
+
+        .grade-selector-card h3 {
+            margin: 0 0 7px;
+            font-size: 16px;
+        }
+
+        .grade-selector-card p {
+            margin: 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .grade-selector-card select {
+            min-width: 180px;
+            padding: 11px 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            background: var(--card-bg, #ffffff);
+            font: inherit;
+            color: inherit;
+            outline-offset: 2px;
+        }
+
+        .grade-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border-color, #e5e7eb);
+        }
+
+        .grade-card-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color, #e5e7eb);
+        }
+
+        .grade-card-header h3 {
+            margin: 0 0 7px;
+            font-size: 17px;
+        }
+
+        .grade-card-header p {
+            margin: 0;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .grade-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .grade-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+        }
+
+        .grade-table th,
+        .grade-table td {
+            padding: 15px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color, #e5e7eb);
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .grade-table th {
+            font-weight: 600;
+            color: #64748b;
+            background: var(--table-header-bg, #f8fafc);
+        }
+
+        .grade-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .grade-badge {
+            display: inline-block;
+            min-width: 34px;
+            text-align: center;
+            padding: 5px 9px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
+        .grade-badge.fail {
+            color: #b91c1c;
+            background: #fee2e2;
+        }
+
+        .grade-badge.pass {
+            color: #15803d;
+            background: #dcfce7;
+        }
+
+        .grade-status {
+            font-weight: 600;
+        }
+
+        .grade-status.fail {
+            color: #dc2626;
+        }
+
+        .grade-status.pass {
+            color: #16a34a;
+        }
+
+        .grade-message {
+            padding: 28px 20px;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .grade-error {
+            color: #b91c1c;
+        }
+
+        .grade-footer {
+            padding: 16px 20px;
+            color: #64748b;
+            font-size: 12px;
+            border-top: 1px solid var(--border-color, #e5e7eb);
+        }
+
+        @media (max-width: 900px) {
+            .grade-student-info,
+            .grade-summary {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grade-student-info,
+            .grade-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .grade-selector-card {
+                align-items: stretch;
+                flex-direction: column;
+            }
+
+            .grade-selector-card select {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="portal-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>APEX</h2>
+                <span>STUDENT PORTAL</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="menu-title">MAIN MENU</div>
+
+            <a href="/pages/dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/pages/profile.html" class="nav-item">
+                <span class="nav-icon">○</span>
+                <span>My Profile</span>
+            </a>
+
+            <div class="academics-wrapper">
+                <button type="button"
+                        class="academics-toggle"
+                        id="academicsToggle">
+                    <span class="academics-title-left">
+                        <span class="nav-icon">▣</span>
+                        <span>Academics</span>
+                    </span>
+                    <span class="academics-arrow" id="academicsArrow">▾</span>
+                </button>
+
+                <div class="academics-submenu show" id="academicsSubmenu">
+                    <a href="/pages/attendance.html" class="academic-item">
+                        <span class="academic-icon">▣</span>
+                        <span>Attendance</span>
+                    </a>
+
+                    <a href="/pages/courses.html" class="academic-item">
+                        <span class="academic-icon">▤</span>
+                        <span>My Courses</span>
+                    </a>
+
+                    <a href="/pages/marks.html" class="academic-item">
+                        <span class="academic-icon">◈</span>
+                        <span>Marks</span>
+                    </a>
+
+                    <a href="/pages/grade-list.html"
+                       class="academic-item active"
+                       data-page="grade-list">
+                        <span class="academic-icon">★</span>
+                        <span>Grade List</span>
+                    </a>
+
+                    <a href="/pages/fees.html" class="academic-item">
+                        <span class="academic-icon">₹</span>
+                        <span>Fees</span>
+                    </a>
+
+                    <a href="/pages/hallticket.html" class="academic-item">
+                        <span class="academic-icon">▫</span>
+                        <span>Hall Ticket</span>
+                    </a>
+
+                    <a href="/pages/notices.html" class="academic-item">
+                        <span class="academic-icon">!</span>
+                        <span>Notices</span>
+                    </a>
+
+                    <a href="/pages/documents.html" class="academic-item">
+                        <span class="academic-icon">▫</span>
+                        <span>Documents</span>
+                    </a>
+
+                    <a href="#" class="academic-item" data-page="timetable">
+                        <span class="academic-icon">▦</span>
+                        <span>Timetable</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="sidebar-bottom">
+            <a href="/pages/settings.html" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" id="logoutButton" class="nav-item logout-item">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+
+            <div class="sidebar-profile">
+                <div class="profile-avatar" id="sidebarAvatar">S</div>
+                <div class="profile-info">
+                    <strong id="sidebarName">Student</strong>
+                    <span id="sidebarEnrollment">Student</span>
+                </div>
+                <button type="button" class="profile-more">•••</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="top-header">
+            <div class="header-left">
+                <div>
+                    <div class="college-name">APEX INSTITUTE OF TECHNOLOGY</div>
+                    <h1>Grade List</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button type="button" class="header-icon" aria-label="Notifications">
+                    ♧
+                    <span class="header-notification-dot"></span>
+                </button>
+
+                <div class="header-profile">
+                    <div class="header-avatar" id="headerAvatar">S</div>
+                    <div class="header-profile-info">
+                        <strong id="headerName">Student</strong>
+                        <span id="headerEnrollment">Student</span>
+                    </div>
+                    <span class="dropdown-arrow">▾</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- GRADE LIST CONTENT -->
+        <section class="marks-content grade-content">
+
+            <div class="marks-heading grade-heading">
+                <div>
+                    <div class="marks-label">ACADEMICS</div>
+                    <h2>Grade List</h2>
+                    <p>View your semester-wise grades and academic performance.</p>
+                </div>
+            </div>
+
+            <!-- STUDENT DETAILS -->
+            <div class="grade-student-info">
+                <div class="grade-info-item">
+                    <span>Student Name</span>
+                    <strong id="studentName">Loading...</strong>
+                </div>
+                <div class="grade-info-item">
+                    <span>Enrollment Number</span>
+                    <strong id="studentEnrollment">Loading...</strong>
+                </div>
+                <div class="grade-info-item">
+                    <span>Branch / Section</span>
+                    <strong id="studentBranchSection">Loading...</strong>
+                </div>
+            </div>
+
+            <!-- SUMMARY -->
+            <div class="grade-summary">
+                <div class="grade-summary-card">
+                    <span>Selected Semester SGPA</span>
+                    <strong id="semesterSGPA">—</strong>
+                </div>
+                <div class="grade-summary-card">
+                    <span>Overall CGPA</span>
+                    <strong id="overallCGPA">—</strong>
+                </div>
+                <div class="grade-summary-card">
+                    <span>Failed Subjects</span>
+                    <strong id="failedSubjects">—</strong>
+                </div>
+            </div>
+
+            <!-- SEMESTER DROPDOWN -->
+            <div class="grade-selector-card">
+                <div>
+                    <h3>Select Semester</h3>
+                    <p id="semesterDescription">
+                        Choose a semester to view your grades.
+                    </p>
+                </div>
+
+                <select id="semesterSelect" aria-label="Select semester" disabled>
+                    <option value="">Loading semesters...</option>
+                </select>
+            </div>
+
+            <!-- GRADE TABLE -->
+            <div class="grade-card">
+                <div class="grade-card-header">
+                    <h3 id="gradeTableTitle">Semester Grade Details</h3>
+                    <p>Internal marks, external marks, final grades and results.</p>
+                </div>
+
+                <div class="grade-table-wrapper">
+                    <table class="grade-table">
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Name</th>
+                                <th>Internal / 60</th>
+                                <th>External / 40</th>
+                                <th>Total / 100</th>
+                                <th>Grade</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gradeTableBody">
+                            <tr>
+                                <td colspan="7" class="grade-message">Loading grade details...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grade-footer">
+                    Grades are calculated from the marks recorded in the portal.
+                </div>
+            </div>
+
+            <div id="gradeMessage" class="grade-message" hidden></div>
+        </section>
+    </main>
+</div>
+
+<script src="/js/grade-list.js"></script>
+<script src="/js/global.js"></script>
+</body>
+</html>

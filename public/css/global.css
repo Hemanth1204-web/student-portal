@@ -1,0 +1,878 @@
+/* =========================================
+   APEX STUDENT PORTAL
+   GLOBAL STYLES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --primary-light: #eef2ff;
+
+    --sidebar: #111827;
+    --sidebar-hover: #1f2937;
+
+    --background: #f5f7fb;
+    --white: #ffffff;
+
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+
+    --border: #e5e7eb;
+
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    --shadow-md:
+        0 4px 12px rgba(0, 0, 0, 0.06);
+
+    --radius: 12px;
+
+    --sidebar-width: 255px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    background: var(--sidebar);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px 14px;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+}
+
+
+/* Branding */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px 25px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    margin-right: 11px;
+}
+
+.brand-text h2 {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.brand-text span {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    margin-top: 2px;
+}
+
+
+/* Navigation */
+
+.sidebar-nav {
+    margin-top: 24px;
+    flex: 1;
+}
+
+.menu-title {
+    color: #6b7280;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    padding: 0 13px;
+
+    margin-bottom: 8px;
+}
+
+.second-menu {
+    margin-top: 25px;
+}
+
+
+.nav-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    padding: 0 13px;
+
+    margin-bottom: 4px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    border-radius: 8px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-item:hover {
+    color: white;
+    background: var(--sidebar-hover);
+
+    transform: translateX(2px);
+}
+
+.nav-item.active {
+    background: var(--primary);
+    color: white;
+
+    box-shadow:
+        0 4px 10px rgba(79, 70, 229, 0.25);
+}
+
+.nav-icon {
+    width: 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    margin-right: 9px;
+}
+
+.notification-badge {
+    margin-left: auto;
+
+    background: #ef4444;
+
+    color: white;
+
+    min-width: 20px;
+    height: 20px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* Sidebar bottom */
+
+.sidebar-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding-top: 12px;
+    margin-top: 10px;
+}
+
+.logout-item:hover {
+    color: #fca5a5;
+}
+
+
+/* Student profile */
+
+.sidebar-profile {
+    display: flex;
+    align-items: center;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-avatar,
+.header-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-weight: 600;
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+
+    font-size: 13px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 9px;
+
+    overflow: hidden;
+}
+
+.profile-info strong {
+    color: white;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+.profile-info span {
+    color: #9ca3af;
+
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+.profile-more {
+    margin-left: auto;
+
+    background: transparent;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    margin-left: var(--sidebar-width);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-header {
+    height: 78px;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 0 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 500;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.college-name {
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    margin-bottom: 4px;
+}
+
+.header-left h1 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icon {
+    position: relative;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 9px;
+
+    background: var(--background);
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+}
+
+.header-icon:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.header-notification-dot {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--danger);
+
+    border: 1px solid white;
+}
+
+.header-profile {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.header-avatar {
+    width: 38px;
+    height: 38px;
+
+    font-size: 13px;
+}
+
+.header-profile-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 9px;
+}
+
+.header-profile-info strong {
+    font-size: 12px;
+}
+
+.header-profile-info span {
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+.dropdown-arrow {
+    margin-left: 10px;
+
+    color: var(--text-light);
+
+    font-size: 8px;
+}
+
+
+/* Mobile menu */
+
+.mobile-menu {
+    display: none;
+
+    width: 38px;
+    height: 38px;
+
+    margin-right: 12px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    border-radius: 8px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   RESPONSIVE SIDEBAR
+========================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .top-header {
+        padding: 0 18px;
+    }
+
+    .header-profile-info,
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+}
+
+/* =========================================
+   ACADEMICS DROPDOWN
+   SAME AS DASHBOARD SIDEBAR
+========================================= */
+
+.academics-toggle {
+    position: relative;
+
+    width: 100%;
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 13px;
+    margin-bottom: 4px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #9ca3af;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Hover */
+
+.academics-toggle:hover {
+    color: white;
+    background: var(--sidebar-hover);
+
+    transform: translateX(2px);
+}
+
+
+/* Left side */
+
+.academics-title-left {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Academics icon */
+
+.academics-title-left .nav-icon {
+    width: 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    margin-right: 9px;
+}
+
+
+/* Arrow */
+
+.academics-arrow {
+    color: #9ca3af;
+
+    font-size: 8px;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Rotated arrow */
+
+.academics-arrow.rotate {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   ACADEMICS SUBMENU
+========================================= */
+
+.academics-submenu {
+    display: none;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    margin: 2px 0 6px;
+}
+
+
+/* Open */
+
+.academics-submenu.show {
+    display: flex;
+}
+
+
+/* =========================================
+   ACADEMIC ITEMS
+========================================= */
+
+.academic-item {
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 10px 0 38px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* Hover */
+
+.academic-item:hover {
+    color: white;
+
+    background: var(--sidebar-hover);
+}
+
+
+/* Active page */
+
+.academic-item.active {
+    color: white;
+
+    background: var(--primary);
+
+    font-weight: 600;
+}
+
+
+/* Academic icon */
+
+.academic-icon {
+    width: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+}
+
+
+/* Notification badge */
+
+.academic-item .notification-badge {
+    margin-left: auto;
+}
+
+
+
+/* ==========================================
+   GLOBAL LIGHT / DARK THEME
+========================================== */
+
+:root {
+    color-scheme: light;
+
+    --portal-bg: #f5f7fb;
+    --portal-card: #ffffff;
+    --portal-header: #ffffff;
+    --portal-sidebar: #111827;
+    --portal-text: #202938;
+    --portal-muted: #778196;
+    --portal-border: #e4e8f0;
+    --portal-input: #ffffff;
+    --portal-hover: #eef0ff;
+    --portal-inner-card: #f7f8fc;
+    --portal-accent: #5145ed;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --portal-bg: #111827;
+    --portal-card: #171f2e;
+    --portal-header: #171f2e;
+    --portal-sidebar: #111827;
+    --portal-text: #edf1f8;
+    --portal-muted: #a2aec1;
+    --portal-border: #2b3548;
+    --portal-input: #111827;
+    --portal-hover: #252f46;
+    --portal-inner-card: #202a3b;
+    --portal-accent: #818cff;
+}
+
+/* Main portal areas */
+html[data-theme] body,
+html[data-theme] .main-content {
+    background-color: var(--portal-bg);
+    color: var(--portal-text);
+}
+
+/* Shared header */
+html[data-theme] .top-header {
+    background-color: var(--portal-header);
+    color: var(--portal-text);
+    border-color: var(--portal-border);
+}
+
+html[data-theme] .college-name,
+html[data-theme] .header-profile-info strong {
+    color: var(--portal-text);
+}
+
+html[data-theme] .header-profile-info small {
+    color: var(--portal-muted);
+}
+
+/* Shared sidebar */
+html[data-theme] .sidebar {
+    background-color: var(--portal-sidebar);
+    color: #e8edf7;
+}
+
+html[data-theme] .sidebar .nav-item,
+html[data-theme] .sidebar .academics-toggle,
+html[data-theme] .sidebar .academic-item {
+    color: #cbd5e1;
+}
+
+html[data-theme] .sidebar .nav-item:hover,
+html[data-theme] .sidebar .academic-item:hover {
+    background-color: rgba(129, 140, 255, 0.12);
+}
+
+html[data-theme] .sidebar .nav-item.active,
+html[data-theme] .sidebar .academic-item.active {
+    background-color: var(--portal-accent);
+    color: #ffffff;
+}
+
+/* Common cards and content panels */
+html[data-theme] .card,
+html[data-theme] .stat-card,
+html[data-theme] .content-card,
+html[data-theme] .table-container,
+html[data-theme] .settings-options,
+html[data-theme] .settings-detail,
+html[data-theme] .settings-options .settings-option {
+    border-color: var(--portal-border);
+}
+
+html[data-theme] .card,
+html[data-theme] .stat-card,
+html[data-theme] .content-card,
+html[data-theme] .table-container,
+html[data-theme] .settings-options,
+html[data-theme] .settings-detail {
+    background-color: var(--portal-card);
+    color: var(--portal-text);
+}
+
+/* Tables */
+html[data-theme] table {
+    color: var(--portal-text);
+}
+
+html[data-theme] th {
+    background-color: var(--portal-inner-card);
+    color: var(--portal-text);
+}
+
+html[data-theme] td,
+html[data-theme] th {
+    border-color: var(--portal-border);
+}
+
+/* Forms */
+html[data-theme] input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+html[data-theme] select,
+html[data-theme] textarea {
+    background-color: var(--portal-input);
+    color: var(--portal-text);
+    border-color: var(--portal-border);
+}
+
+html[data-theme] input::placeholder,
+html[data-theme] textarea::placeholder {
+    color: var(--portal-muted);
+}
+
+/* Common muted text */
+html[data-theme] .text-muted,
+html[data-theme] .subtitle,
+html[data-theme] .page-description {
+    color: var(--portal-muted);
+}
+
+/* Settings-specific theme variables */
+html[data-theme="light"] body {
+    --settings-text: #202938;
+    --settings-muted: #778196;
+    --settings-card: #ffffff;
+    --settings-border: #e4e8f0;
+    --settings-subtle: #f7f8fc;
+    --settings-input-bg: #ffffff;
+    --settings-accent: #5145ed;
+    --settings-accent-soft: #eef0ff;
+    --settings-accent-border: #dce0ff;
+}
+
+html[data-theme="dark"] body {
+    --settings-text: #edf1f8;
+    --settings-muted: #a2aec1;
+    --settings-card: #171f2e;
+    --settings-border: #2b3548;
+    --settings-subtle: #202a3b;
+    --settings-input-bg: #111827;
+    --settings-accent: #818cff;
+    --settings-accent-soft: #252f46;
+    --settings-accent-border: #3b456d;
+}

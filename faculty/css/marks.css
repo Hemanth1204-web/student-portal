@@ -1,0 +1,304 @@
+
+.marks-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 30px;
+    margin: 24px 0;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #f0edff, #ffffff);
+    border: 1px solid #e8e3ff;
+}
+
+.marks-banner h2 {
+    margin: 8px 0;
+    font-size: 28px;
+}
+
+.marks-banner p {
+    margin-bottom: 0;
+    color: #687797;
+}
+
+.marks-banner .eyebrow,
+.dialog-heading .eyebrow {
+    color: #7360f2;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.marks-banner-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+    background: #7360f2;
+    color: white;
+    font-size: 32px;
+}
+
+.marks-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.marks-details .field {
+    min-width: 0;
+}
+
+.marks-details label,
+.marks-dialog label {
+    display: block;
+    margin-bottom: 8px;
+    color: #596781;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.marks-details input,
+.marks-details select,
+.marks-toolbar input,
+.marks-dialog input:not([type="hidden"]) {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #dce2ee;
+    border-radius: 9px;
+    background: #fff;
+    color: #202b45;
+    font: inherit;
+}
+
+.marks-details input[readonly] {
+    background: #f7f8fc;
+}
+
+.assigned-subject-note {
+    margin: 18px 0;
+    color: #71809c;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.marks-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 26px 0 18px;
+}
+
+.marks-toolbar h3 {
+    margin: 0 0 6px;
+    font-size: 19px;
+}
+
+.marks-toolbar p {
+    margin: 0;
+    color: #71809c;
+    font-size: 13px;
+}
+
+.marks-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.marks-toolbar-actions input {
+    width: 240px;
+}
+
+.marks-table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+.marks-table th {
+    padding: 15px 13px;
+    background: #f7f8fc;
+    color: #6c7893;
+    font-size: 11px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.marks-table td {
+    padding: 15px 13px;
+    border-top: 1px solid #e9edf4;
+    color: #26334e;
+    font-size: 13px;
+}
+
+.marks-table tbody tr:hover {
+    background: #fafaff;
+}
+
+.marks-table .enrollment {
+    font-weight: 600;
+}
+
+.marks-table .student-name {
+    font-weight: 600;
+}
+
+.marks-table .student-status {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 20px;
+    background: #fff4dc;
+    color: #966400;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.marks-table .student-status.complete {
+    background: #e4f8ee;
+    color: #18794e;
+}
+
+.upload-marks-btn {
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 9px;
+    background: #7360f2;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.upload-marks-btn:hover {
+    background: #5e4be0;
+}
+
+.marks-message {
+    margin: 12px 0;
+    color: #71809c;
+    font-size: 13px;
+}
+
+.marks-message.success {
+    color: #16835d;
+}
+
+.marks-message.error {
+    color: #c0394b;
+}
+
+.marks-dialog {
+    width: min(540px, calc(100% - 28px));
+    max-width: 540px;
+    padding: 0;
+    border: 0;
+    border-radius: 18px;
+    color: #202b45;
+    box-shadow: 0 24px 80px #11182a40;
+}
+
+.marks-dialog::backdrop {
+    background: #11182a80;
+    backdrop-filter: blur(3px);
+}
+
+.marks-dialog form {
+    padding: 25px;
+}
+
+.dialog-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.dialog-heading h2 {
+    margin: 7px 0;
+    font-size: 24px;
+}
+
+.dialog-heading p {
+    color: #71809c;
+    font-size: 13px;
+}
+
+.close-dialog {
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 9px;
+    background: #f0f2f8;
+    color: #27334c;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dialog-subject {
+    margin: 18px 0;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f3f0ff;
+    color: #5e4bd9;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.marks-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.marks-dialog .field {
+    min-width: 0;
+}
+
+.dialog-note {
+    color: #71809c;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+@media (max-width: 650px) {
+    .marks-banner {
+        padding: 20px;
+    }
+
+    .marks-banner h2 {
+        font-size: 23px;
+    }
+
+    .marks-details,
+    .marks-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .marks-toolbar-actions,
+    .marks-toolbar-actions input {
+        width: 100%;
+    }
+
+    .marks-toolbar-actions button {
+        width: 100%;
+    }
+
+    .marks-dialog form {
+        padding: 20px;
+    }
+}

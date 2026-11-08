@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | Apex Faculty Portal</title>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/faculty/css/faculty-dashboard.css">
+    <link rel="stylesheet" href="/faculty/css/attendance.css">
+</head>
+<body>
+<div class="portal">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>Apex</h2>
+                <p>Faculty Portal</p>
+            </div>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="navigation">
+            <a href="/faculty/pages/faculty-dashboard.html" class="nav-link"><span>▦</span> Dashboard</a>
+            <a href="/faculty/pages/my-subjects.html" class="nav-link"><span>▤</span> My Subjects</a>
+            <a href="/faculty/pages/my-students.html" class="nav-link"><span>♙</span> My Students</a>
+            <a href="/faculty/pages/attendance.html" class="nav-link active"><span>✓</span> Attendance</a>
+            <a href="/faculty/pages/marks.html" class="nav-link"><span>▧</span> Marks Management</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" id="profileLink" class="nav-link"><span>⚙</span> Profile</a>
+             <a href="/faculty/pages/settings.html" class="nav-link">
+    <span>⚙</span> Settings</a>
+            <button type="button" id="logoutBtn" class="logout-btn">
+                <span>↪</span> Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Faculty / Attendance</p>
+                <h1>Attendance Management</h1>
+            </div>
+
+            <div class="profile-summary">
+                <div class="avatar" id="avatar">F</div>
+                <div>
+                    <strong id="facultyName">Loading...</strong>
+                    <p id="facultyId">Faculty ID</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="attendance-banner">
+            <div>
+                <p class="eyebrow">APEX INSTITUTE OF TECHNOLOGY</p>
+                <h2>Student Attendance</h2>
+                <p>Record and review attendance for your assigned classes.</p>
+            </div>
+            <div class="attendance-banner-icon">✓</div>
+        </section>
+
+        <section class="content-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Class Details</h2>
+                    <p>Select an assigned class. Its subject is determined by your teaching assignment.</p>
+                </div>
+            </div>
+
+            <div class="attendance-details">
+                <div class="field">
+                    <label for="attendanceDate">Attendance Date</label>
+                    <input type="date" id="attendanceDate" required>
+                </div>
+
+                <div class="field">
+                    <label for="assignmentSelect">Assigned Section</label>
+                    <select id="assignmentSelect" required>
+                        <option value="">Loading assignments...</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="subjectDisplay">Subject</label>
+                    <input id="subjectDisplay" type="text" readonly value="Select a section">
+                </div>
+
+                <div class="field">
+                    <label for="branchDisplay">Branch</label>
+                    <input id="branchDisplay" type="text" readonly value="—">
+                </div>
+
+                <div class="field">
+                    <label for="yearDisplay">Year / Semester</label>
+                    <input id="yearDisplay" type="text" readonly value="—">
+                </div>
+
+                <div class="field">
+                    <label for="sectionDisplay">Section</label>
+                    <input id="sectionDisplay" type="text" readonly value="—">
+                </div>
+            </div>
+
+            <p class="assigned-subject-note">
+                Only your assigned classes are available. Select one section at a time;
+                students will be loaded for that class only.
+            </p>
+
+            <div class="attendance-toolbar">
+                <div>
+                    <h3 id="classTitle">Select an assigned class</h3>
+                    <p id="studentSummary">Students will appear here.</p>
+                </div>
+
+                <button type="button" id="markAllPresentBtn" class="secondary-btn" disabled>
+                    Mark All Present
+                </button>
+            </div>
+
+            <div id="attendanceMessage" class="attendance-message" role="status">
+                Loading your teaching assignments...
+            </div>
+
+            <div class="table-wrapper">
+                <table class="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Enrollment Number</th>
+                            <th>Student Name</th>
+                            <th>Attendance Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTable">
+                        <tr>
+                            <td colspan="4">Select an assigned class to load students.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="attendance-footer">
+                <span id="markedSummary">No attendance marked yet.</span>
+                <button type="button" id="saveAttendanceBtn" class="primary-btn" disabled>
+                    Save Attendance
+                </button>
+            </div>
+        </section>
+
+        <section class="content-card history-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Attendance History</h2>
+                    <p>Review saved attendance for the selected class.</p>
+                </div>
+                <button type="button" id="loadHistoryBtn" class="secondary-btn" disabled>
+                    View History
+                </button>
+            </div>
+
+            <div id="historyMessage" class="attendance-message">
+                Select a class, then choose View History.
+            </div>
+
+            <div class="table-wrapper">
+                <table class="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Subject</th>
+                            <th>Section</th>
+                            <th>Present</th>
+                            <th>Absent</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTable">
+                        <tr><td colspan="5">No history loaded.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <p id="attendanceError" class="error-message" role="alert"></p>
+
+        <footer class="footer">
+            © 2026 Apex Institute of Technology · Faculty Portal
+        </footer>
+    </main>
+</div>
+
+<script src="/faculty/js/attendance.js"></script>
+</body>
+</html>

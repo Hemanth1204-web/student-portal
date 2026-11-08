@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Courses | Apex Student Portal</title>
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+   <link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/courses.css">
+</head>
+
+
+<body>
+
+<div class="portal-layout">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                A
+            </div>
+
+            <div class="brand-text">
+
+                <h2>APEX</h2>
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="/pages/dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a
+                href="/pages/profile.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ○
+                </span>
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+            <!-- =================================
+                 ACADEMICS
+            ================================== -->
+
+            <div class="academics-wrapper">
+
+               <button
+    type="button"
+    class="academics-toggle"
+    id="academicsToggle">
+
+                    <span class="academics-title-left">
+
+                        <span class="nav-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Academics
+                        </span>
+
+                    </span>
+
+
+                    <span
+                        id="academicsArrow"
+                        class="academics-arrow"
+                    >
+                        ▾
+                    </span>
+
+                </button>
+
+
+                <!-- SUBMENU -->
+
+                <div
+                    id="academicsSubmenu"
+                    class="academics-submenu show"
+                >
+
+                    <!-- ATTENDANCE -->
+
+                    <a
+                        href="/pages/attendance.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Attendance
+                        </span>
+
+                    </a>
+
+
+                    <!-- MY COURSES -->
+
+                    <a
+                        href="/pages/courses.html"
+                        class="academic-item active"
+                    >
+
+                        <span class="academic-icon">
+                            ▤
+                        </span>
+
+                        <span>
+                            My Courses
+                        </span>
+
+                    </a>
+
+
+                    <!-- MARKS -->
+
+                    <a
+                        href="/pages/marks.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ◈
+                        </span>
+
+                        <span>
+                            Marks
+                        </span>
+
+                    </a>
+
+                    
+<a href="/pages/grade-list.html"
+   class="academic-item"
+   data-page="grade-list">
+    <span class="academic-icon">★</span>
+    <span>Grade List</span>
+</a>
+
+
+
+                    <!-- FEES -->
+
+                    <a
+                        href="/pages/fees.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ₹
+                        </span>
+
+                        <span>
+                            Fees
+                        </span>
+
+                    </a>
+
+
+                    <!-- HALL TICKET -->
+
+                    <a
+                        href="/pages/hallticket.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▫
+                        </span>
+
+                        <span>
+                            Hall Ticket
+                        </span>
+
+                    </a>
+
+
+                    <!-- NOTICES -->
+
+                    <a
+                        href="/pages/notices.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            !
+                        </span>
+
+                        <span>
+                            Notices
+                        </span>
+
+                    </a>
+
+
+                    <!-- DOCUMENTS -->
+
+                    <a
+                        href="/pages/documents.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▫
+                        </span>
+
+                        <span>
+                            Documents
+                        </span>
+
+                    </a>
+
+                    <a href="/pages/timetable.html"
+               class="academic-item"
+               data-page="timetable">
+
+                <span class="academic-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="/pages/settings.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- LOGOUT -->
+
+            <a
+                href="#"
+                id="logoutButton"
+                class="nav-item logout-item"
+            >
+
+                <span class="nav-icon">
+                    ↪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+
+            <!-- STUDENT PROFILE -->
+
+            <div class="sidebar-profile">
+
+                <div
+                    class="profile-avatar"
+                    id="sidebarAvatar"
+                >
+                    S
+                </div>
+
+                <div class="profile-info">
+
+                    <strong id="sidebarStudentName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="profile-more"
+                >
+                    •••
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="top-header">
+
+
+            <div class="header-left">
+
+                <div>
+
+                    <div class="college-name">
+                        APEX INSTITUTE OF TECHNOLOGY
+                    </div>
+
+                    <h1>
+                        My Courses
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <!-- NOTIFICATION -->
+
+                <button
+                    type="button"
+                    class="header-icon"
+                >
+
+                    ♧
+
+                    <span class="header-notification-dot"></span>
+
+                </button>
+
+
+                <!-- PROFILE -->
+
+                <div class="header-profile">
+
+                    <div
+                        class="header-avatar"
+                        id="headerAvatar"
+                    >
+                        S
+                    </div>
+
+                    <div class="header-profile-info">
+
+                        <strong id="headerStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================
+             COURSES CONTENT
+        ====================================== -->
+
+        <section class="courses-content">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="courses-heading">
+
+
+                <div>
+
+                    <div class="courses-label">
+                        ACADEMICS
+                    </div>
+
+                    <h2>
+                        My Courses
+                    </h2>
+
+                    <p>
+                        View your subjects for the current academic year.
+                    </p>
+
+                </div>
+
+
+                <!-- STUDENT INFO -->
+
+                <div class="student-info-box">
+
+                    <strong id="studentEnrollment">
+                        --
+                    </strong>
+
+                    <span id="studentAcademic">
+                        --
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 YEAR / BRANCH INFORMATION
+            ================================== -->
+
+            <div class="course-overview">
+
+                <div class="overview-item">
+
+                    <span>
+                        Academic Year
+                    </span>
+
+                    <strong id="yearDisplay">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="overview-item">
+
+                    <span>
+                        Branch
+                    </span>
+
+                    <strong id="branchDisplay">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="overview-item">
+
+                    <span>
+                        Section
+                    </span>
+
+                    <strong id="sectionDisplay">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="overview-item">
+
+                    <span>
+                        Current Semester
+                    </span>
+
+                    <strong id="semesterDisplay">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SEMESTER SELECTOR
+            ================================== -->
+
+            <div class="semester-selector-card">
+
+                <div>
+
+                    <h3>
+                        Semester
+                    </h3>
+
+                    <p>
+                        Select a semester to view your subjects.
+                    </p>
+
+                </div>
+
+
+                <select
+                    id="semesterSelect"
+                >
+
+                </select>
+
+            </div>
+
+
+
+            <!-- =================================
+                 COURSE LIST
+            ================================== -->
+
+            <div class="courses-card">
+
+
+                <div class="courses-card-header">
+
+                    <div>
+
+                        <h3 id="semesterTitle">
+                            Semester
+                        </h3>
+
+                        <p id="courseCount">
+                            Subjects
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="courseList"
+                    class="course-list"
+                >
+
+                    <!-- JavaScript inserts subjects -->
+
+                </div>
+
+
+                <!-- NO COURSES -->
+
+                <div
+                    id="noCourses"
+                    class="no-courses"
+                    style="display:none;"
+                >
+
+                    <div class="no-courses-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        No Subjects Available
+                    </h3>
+
+                    <p>
+                        Subjects for this semester have not been added yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- COURSES JS -->
+
+<script src="/js/global.js"></script>
+<script src="/js/courses.js"></script>
+
+</body>
+
+</html>

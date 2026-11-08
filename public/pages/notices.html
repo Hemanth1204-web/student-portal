@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Board | Apex Student Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/notices.css">
+</head>
+<body>
+
+<div class="portal-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>APEX</h2>
+                <span>STUDENT PORTAL</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="menu-title">MAIN MENU</div>
+
+            <a href="/pages/dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/pages/profile.html" class="nav-item">
+                <span class="nav-icon">○</span>
+                <span>My Profile</span>
+            </a>
+
+            <div class="academics-wrapper">
+                <button
+                    type="button"
+                    class="academics-toggle"
+                    id="academicsToggle"
+                    aria-expanded="false"
+                    aria-controls="academicsSubmenu"
+                >
+                    <span class="academics-title-left">
+                        <span class="nav-icon">▣</span>
+                        <span>Academics</span>
+                    </span>
+
+                    <span class="academics-arrow" id="academicsArrow">▾</span>
+                </button>
+
+                <div class="academics-submenu" id="academicsSubmenu">
+                    <a href="/pages/attendance.html" class="academic-item">
+                        <span class="academic-icon">▣</span>
+                        <span>Attendance</span>
+                    </a>
+
+                    <a href="/pages/courses.html" class="academic-item">
+                        <span class="academic-icon">▤</span>
+                        <span>My Courses</span>
+                    </a>
+
+                    <a href="/pages/marks.html" class="academic-item">
+                        <span class="academic-icon">◇</span>
+                        <span>Marks</span>
+                    </a>
+
+                    
+<a href="/pages/grade-list.html"
+   class="academic-item"
+   data-page="grade-list">
+    <span class="academic-icon">★</span>
+    <span>Grade List</span>
+</a>
+
+
+                    <a href="/pages/fees.html" class="academic-item">
+                        <span class="academic-icon">₹</span>
+                        <span>Fees</span>
+                    </a>
+
+                    <a href="/pages/hallticket.html" class="academic-item">
+                        <span class="academic-icon">▫</span>
+                        <span>Hall Ticket</span>
+                    </a>
+
+                    <a href="/pages/notices.html" class="academic-item active">
+                        <span class="academic-icon">!</span>
+                        <span>Notices</span>
+                    </a>
+
+                    <a href="/pages/documents.html" class="academic-item">
+                        <span class="academic-icon">▫</span>
+                        <span>Documents</span>
+                    </a>
+
+                    <a href="#"
+               class="academic-item"
+               data-page="timetable">
+
+                <span class="academic-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="sidebar-bottom">
+            <a href="/pages/settings.html" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" id="logoutButton" class="nav-item logout-item">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+
+            <div class="sidebar-profile">
+                <div class="profile-avatar" id="sidebarAvatar">S</div>
+                <div class="profile-info">
+                    <strong id="sidebarStudentName">Student</strong>
+                    <span>Student</span>
+                </div>
+                <button type="button" class="profile-more">•••</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <header class="top-header">
+            <div class="header-left">
+                <div>
+                    <div class="college-name">APEX INSTITUTE OF TECHNOLOGY</div>
+                    <h1>Notice Board</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button
+                    type="button"
+                    class="header-icon"
+                    aria-label="Notifications"
+                >♧</button>
+
+                <div class="header-profile">
+                    <div class="header-avatar" id="headerAvatar">S</div>
+                    <div class="header-profile-info">
+                        <strong id="headerStudentName">Student</strong>
+                        <span>Student</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- NOTICES -->
+        <section class="notices-content">
+            <div class="notice-board">
+
+                <div class="board-header">
+                    <h2>Notice Board</h2>
+
+                    <div class="board-header-right">
+                        <label class="show-all-label">
+                            <input type="checkbox" id="showAllNotices" checked>
+                            <span>Show all notices</span>
+                        </label>
+
+                        <span class="notice-count" id="noticeCount">
+                            Showing all 10 of 10 notices
+                        </span>
+                    </div>
+                </div>
+
+                <!-- SEARCH -->
+                <div class="notice-search-row">
+                    <input
+                        type="search"
+                        id="noticeSearch"
+                        placeholder="Search notices..."
+                        autocomplete="off"
+                        aria-label="Search notices"
+                    >
+                </div>
+
+                <!-- NOTICE TABLE -->
+                <div class="notice-table-wrapper">
+                    <table class="notice-table">
+                        <thead>
+                            <tr>
+                                <th class="serial-column">S#</th>
+                                <th>NOTICE</th>
+                                <th class="viewed-column">VIEWED</th>
+                                <th class="date-column">DATE</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="noticeTableBody"></tbody>
+                    </table>
+
+                    <div class="notice-empty" id="noticeEmpty" hidden>
+                        No notices found.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="/js/notices.js?v=7"></script>
+<script src="/js/global.js"></script>
+</body>
+</html>

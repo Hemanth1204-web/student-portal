@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Management | Apex Faculty Portal</title>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/faculty/css/faculty-dashboard.css">
+    <link rel="stylesheet" href="/faculty/css/marks.css">
+</head>
+<body>
+<div class="portal">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>Apex</h2>
+                <p>Faculty Portal</p>
+            </div>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="navigation">
+            <a href="/faculty/pages/faculty-dashboard.html" class="nav-link">
+                <span>▦</span> Dashboard
+            </a>
+            <a href="/faculty/pages/my-subjects.html" class="nav-link">
+                <span>▤</span> My Subjects
+            </a>
+            <a href="/faculty/pages/my-students.html" class="nav-link">
+                <span>♙</span> My Students
+            </a>
+            <a href="/faculty/pages/attendance.html" class="nav-link">
+                <span>✓</span> Attendance
+            </a>
+            <a href="/faculty/pages/marks.html" class="nav-link active">
+                <span>▧</span> Marks Management
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" id="profileLink" class="nav-link">
+                <span>⚙</span> Profile
+            </a>
+             <a href="/faculty/pages/settings.html" class="nav-link">
+    <span>⚙</span> Settings</a>
+            <button type="button" id="logoutBtn" class="logout-btn">
+                <span>↪</span> Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Faculty / Marks Management</p>
+                <h1>Marks Management</h1>
+            </div>
+
+            <div class="profile-summary">
+                <div class="avatar" id="avatar">F</div>
+                <div>
+                    <strong id="facultyName">Loading...</strong>
+                    <p id="facultyId">Faculty ID</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="marks-banner">
+            <div>
+                <p class="eyebrow">APEX INSTITUTE OF TECHNOLOGY</p>
+                <h2>Student Internal Marks</h2>
+                <p>Select an assigned class and upload marks for each student.</p>
+            </div>
+            <div class="marks-banner-icon">▧</div>
+        </section>
+
+        <section class="content-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Class Details</h2>
+                    <p>Select one of your assigned classes. The subject is taken from your teaching assignment.</p>
+                </div>
+            </div>
+
+            <div class="marks-details">
+                <div class="field">
+                    <label for="assignmentSelect">Assigned Section</label>
+                    <select id="assignmentSelect" required>
+                        <option value="">Loading assignments...</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="subjectDisplay">Subject</label>
+                    <input id="subjectDisplay" type="text" readonly value="Select a section">
+                </div>
+
+                <div class="field">
+                    <label for="branchDisplay">Branch</label>
+                    <input id="branchDisplay" type="text" readonly value="—">
+                </div>
+
+                <div class="field">
+                    <label for="yearDisplay">Year / Semester</label>
+                    <input id="yearDisplay" type="text" readonly value="—">
+                </div>
+
+                <div class="field">
+                    <label for="sectionDisplay">Section</label>
+                    <input id="sectionDisplay" type="text" readonly value="—">
+                </div>
+            </div>
+
+            <p class="assigned-subject-note">
+                Only students in the selected assigned class are displayed.
+                Use Upload Marks beside a student to enter or update their internal marks.
+            </p>
+
+            <div class="marks-toolbar">
+                <div>
+                    <h3 id="classTitle">Select an assigned class</h3>
+                    <p id="studentSummary">Students will appear here.</p>
+                </div>
+
+                <div class="marks-toolbar-actions">
+                    <input type="search" id="studentSearch"
+                           placeholder="Search enrollment or name"
+                           aria-label="Search students">
+                    <button type="button" id="reloadStudentsBtn" class="secondary-btn">
+                        Reload Students
+                    </button>
+                </div>
+            </div>
+
+            <div id="marksMessage" class="marks-message" role="status">
+                Loading your teaching assignments...
+            </div>
+
+            <div class="table-wrapper">
+                <table class="marks-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Enrollment Number</th>
+                            <th>Student Name</th>
+                            <th>Marks Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTable">
+                        <tr>
+                            <td colspan="5">Select an assigned class to load students.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <p id="marksError" class="error-message" role="alert"></p>
+
+        <footer class="footer">
+            © 2026 Apex Institute of Technology · Faculty Portal
+        </footer>
+    </main>
+</div>
+
+<!-- Individual student's marks form -->
+<dialog id="marksDialog" class="marks-dialog">
+    <form id="studentMarksForm">
+        <div class="dialog-heading">
+            <div>
+                <p class="eyebrow">STUDENT INTERNAL ASSESSMENT</p>
+                <h2>Upload Marks</h2>
+                <p id="dialogStudentInfo">Student details</p>
+            </div>
+            <button type="button" id="closeDialogBtn"
+                    class="close-dialog" aria-label="Close">×</button>
+        </div>
+
+        <div class="dialog-subject" id="dialogSubjectInfo"></div>
+
+        <input type="hidden" id="dialogStudentId">
+
+        <div class="marks-form-grid">
+            <div class="field">
+                <label for="midTerm">Mid-Term</label>
+                <input id="midTerm" type="number" min="0" max="100"
+                       step="0.01" placeholder="Enter marks">
+            </div>
+
+            <div class="field">
+                <label for="assignment1">Assignment 1</label>
+                <input id="assignment1" type="number" min="0" max="100"
+                       step="0.01" placeholder="Enter marks">
+            </div>
+
+            <div class="field">
+                <label for="assignment2">Assignment 2</label>
+                <input id="assignment2" type="number" min="0" max="100"
+                       step="0.01" placeholder="Enter marks">
+            </div>
+
+            <div class="field">
+                <label for="labInternal">Lab Internal</label>
+                <input id="labInternal" type="number" min="0" max="100"
+                       step="0.01" placeholder="Enter marks">
+            </div>
+        </div>
+
+        <p class="dialog-note">
+            Leave a field blank if the mark has not been entered.
+            External exam marks are not included.
+        </p>
+
+        <p id="dialogMessage" class="marks-message" role="status"></p>
+
+        <div class="dialog-actions">
+            <button type="button" id="cancelDialogBtn" class="secondary-btn">
+                Cancel
+            </button>
+            <button type="submit" id="saveStudentMarksBtn" class="primary-btn">
+                Save Marks
+            </button>
+        </div>
+    </form>
+</dialog>
+
+<script src="/faculty/js/marks.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents | Apex Student Portal</title>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/documents.css">
+</head>
+<body>
+
+<div class="portal-layout">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>APEX</h2>
+                <span>STUDENT PORTAL</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="menu-title">MAIN MENU</div>
+
+            <a href="/pages/dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/pages/profile.html" class="nav-item">
+                <span class="nav-icon">○</span>
+                <span>My Profile</span>
+            </a>
+
+            <div class="academics-wrapper">
+                <button type="button" class="academics-toggle"
+                        id="academicsToggle" aria-expanded="true">
+                    <span class="academics-title-left">
+                        <span class="nav-icon">▣</span>
+                        <span>Academics</span>
+                    </span>
+                    <span id="academicsArrow">▾</span>
+                </button>
+
+                <div class="academics-submenu show" id="academicsSubmenu">
+                    <a href="/pages/attendance.html" class="academic-item">Attendance</a>
+                    <a href="/pages/courses.html" class="academic-item">My Courses</a>
+                    <a href="/pages/marks.html" class="academic-item">Marks</a>
+                    <a href="/pages/grade-list.html" class="academic-item">Grade List</a>
+                    <a href="/pages/fees.html" class="academic-item">Fees</a>
+                    <a href="/pages/hallticket.html" class="academic-item">Hall Ticket</a>
+                    <a href="/pages/notices.html" class="academic-item">Notices</a>
+                    <a href="/pages/documents.html" class="academic-item active">Documents</a>
+                    <a href="/pages/timetable.html" class="academic-item">Timetable</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="/pages/settings.html" class="nav-item">Settings</a>
+            <a href="#" id="logoutButton" class="nav-item">Logout</a>
+
+            <div class="sidebar-profile">
+                <div class="profile-avatar" id="sidebarAvatar">S</div>
+                <div class="profile-info">
+                    <strong id="sidebarName">Student</strong>
+                    <span id="sidebarEnrollment">Enrollment</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="top-header">
+            <div class="header-left">
+                <div>
+                    <div class="college-name">APEX INSTITUTE OF TECHNOLOGY</div>
+                    <h1>Documents</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="header-profile">
+                    <div class="header-avatar" id="headerAvatar">S</div>
+                    <div class="header-profile-info">
+                        <strong id="headerName">Student</strong>
+                        <span id="headerEnrollment">Enrollment</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="documents-content">
+
+            <div class="documents-heading">
+                <div>
+                    <span class="eyebrow">STUDENT RESOURCES</span>
+                    <h2>Grade Sheets & Application Forms</h2>
+                    <p>View your semester grades and access student application forms.</p>
+                </div>
+            </div>
+
+          <div class="document-tabs">
+    <button type="button" class="document-tab"
+            data-section="gradesSection">
+        Grade Sheets
+    </button>
+
+    <button type="button" class="document-tab"
+            data-section="formsSection">
+        Forms & Applications
+    </button>
+</div>
+
+<div id="documentWelcome" class="document-welcome">
+    <h2>Welcome to Documents</h2>
+    <p>Select a category above to view your grade sheets or application forms.</p>
+</div>
+
+            <!-- GRADE SHEETS -->
+            <section id="gradesSection" class="document-section" hidden>
+
+                <div class="semester-controls">
+                    <label for="semesterSelect">Select Semester</label>
+                    <select id="semesterSelect">
+                        <option value="">Loading...</option>
+                    </select>
+                </div>
+
+                <div id="gradeMessage" class="message-box" hidden></div>
+
+                <div id="gradeSheet" class="grade-sheet">
+
+                    <div class="grade-sheet-header">
+                        <h2>APEX INSTITUTE OF TECHNOLOGY</h2>
+                        <h3>SEMESTER GRADE SHEET</h3>
+                    </div>
+
+                    <div class="student-details-grid">
+                        <div>
+                            <span>Name</span>
+                            <strong id="gradeStudentName">—</strong>
+                        </div>
+                        <div>
+                            <span>Enrollment No.</span>
+                            <strong id="gradeEnrollment">—</strong>
+                        </div>
+                        <div>
+                            <span>Batch</span>
+                            <strong id="gradeBatch">—</strong>
+                        </div>
+                        <div>
+                            <span>Course</span>
+                            <strong id="gradeCourse">—</strong>
+                        </div>
+                        <div>
+                            <span>Semester</span>
+                            <strong id="gradeSemester">—</strong>
+                        </div>
+                    </div>
+
+                    <div class="grade-table-wrapper">
+                        <table class="grade-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Subject</th>
+                                    <th>Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gradeTableBody">
+                                <tr>
+                                    <td colspan="3">Select a semester.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="grade-sheet-footer">
+                        <span>Generated from Apex Student Portal</span>
+                        <button type="button" id="printGradeSheet">
+                            Print / Save as PDF
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- APPLICATION FORMS -->
+            <section id="formsSection" class="document-section" hidden>
+
+                <div class="form-card-grid">
+
+                    <article class="form-card">
+                        <div class="form-icon">PDF</div>
+                        <span class="form-category">APPLICATION FORM</span>
+                        <h3>Supply Exam Form</h3>
+                        <p>Application for supplementary examinations.</p>
+                        <a href="/forms/supply-exam-form.pdf"
+   class="form-action"
+   target="_blank"
+   rel="noopener">
+    View / Print Form
+</a>
+                    </article>
+
+                    <article class="form-card">
+                        <div class="form-icon">PDF</div>
+                        <span class="form-category">APPLICATION FORM</span>
+                        <h3>Low Attendance / Condonation Form</h3>
+                        <p>Application for consideration of attendance shortage.</p>
+                        <a href="/forms/low-attendance-condonation-form.pdf"
+   class="form-action"
+   target="_blank"
+   rel="noopener">
+    View / Print Form
+</a>
+                    </article>
+
+                    <article class="form-card">
+                        <div class="form-icon">PDF</div>
+                        <span class="form-category">HOSTEL FORM</span>
+                        <h3>Hostel Leave Form</h3>
+                        <p>Leave application for hostel residents.</p>
+                        <a href="/forms/hostel-leave-form.pdf"
+   class="form-action"
+   target="_blank"
+   rel="noopener">
+    View / Print Form
+</a>
+                    </article>
+
+                    <article class="form-card">
+                        <div class="form-icon">FORM</div>
+                        <span class="form-category">REGISTRATION</span>
+                        <h3>Semester Registration Form</h3>
+                        <p>Print the registration form, fill in your details and fee-payment information.</p>
+                        <a href="/pages/semform.html"
+                           class="form-action">
+                            Open Registration Form
+                        </a>
+                    </article>
+
+                </div>
+            </section>
+
+        </section>
+    </main>
+</div>
+
+<script src="/js/documents.js"></script>
+<script src="/js/global.js"></script>
+</body>
+</html>

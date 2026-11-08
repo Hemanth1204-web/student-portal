@@ -1,0 +1,916 @@
+/* =========================================================
+   APEX STUDENT PORTAL
+   HALL TICKET PAGE
+   Matches Courses / Attendance Layout
+========================================================= */
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.hall-ticket-content {
+    padding: 30px 35px 45px;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.hall-ticket-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 22px;
+}
+
+.hall-ticket-heading > div {
+    flex: 1;
+}
+
+.hall-ticket-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.hall-ticket-heading h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.hall-ticket-heading p {
+    margin: 7px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   STUDENT INFORMATION CARD
+========================================================= */
+
+.hall-student-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+
+    margin-bottom: 22px;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+}
+
+.hall-student-card > div {
+    padding: 17px 20px;
+    border-right: 1px solid var(--border);
+}
+
+.hall-student-card > div:last-child {
+    border-right: none;
+}
+
+.hall-student-card span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: var(--text-secondary);
+}
+
+.hall-student-card strong {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   SEMESTER SELECTOR
+========================================================= */
+
+.hall-selector-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 20px 22px;
+    margin-bottom: 22px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.hall-selector-card > div {
+    flex: 1;
+}
+
+.hall-selector-card h3 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    color: var(--text-primary);
+}
+
+.hall-selector-card p {
+    margin: 5px 0 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   SEMESTER DROPDOWN
+========================================================= */
+
+#semesterSelect {
+    width: 220px;
+    height: 44px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--white);
+    color: var(--text-primary);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    outline: none;
+    cursor: pointer;
+}
+
+#semesterSelect:hover {
+    border-color: var(--primary);
+}
+
+#semesterSelect:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px var(--primary-light);
+}
+
+
+/* =========================================================
+   HALL TICKET CARD
+========================================================= */
+
+.hall-ticket-card {
+    display: block;
+
+    width: 100%;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+}
+
+.hall-ticket-card.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   HALL TICKET HEADER
+========================================================= */
+
+.hall-ticket-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 28px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: var(--white);
+}
+
+.hall-ticket-title {
+    margin-bottom: 5px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: var(--primary);
+}
+
+.hall-ticket-header h3 {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: var(--text-primary);
+}
+
+.hall-ticket-header p {
+    margin: 6px 0 0;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   HALL TICKET BADGE
+========================================================= */
+
+.hall-ticket-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 125px;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    background: var(--primary-light);
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TICKET STUDENT DETAILS
+========================================================= */
+
+.ticket-student-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.ticket-student-details > div {
+    padding: 16px 20px;
+
+    border-right: 1px solid var(--border);
+}
+
+.ticket-student-details > div:last-child {
+    border-right: none;
+}
+
+.ticket-student-details span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    color: var(--text-secondary);
+}
+
+.ticket-student-details strong {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    color: var(--text-primary);
+}
+
+
+/* =========================================================
+   EXAM TABLE CONTAINER
+========================================================= */
+
+.exam-table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   EXAM TABLE
+========================================================= */
+
+.exam-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+}
+
+.exam-table thead {
+    background: var(--primary-light);
+}
+
+.exam-table th {
+    padding: 14px 18px;
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: left;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: var(--text-primary);
+
+    white-space: nowrap;
+}
+
+.exam-table td {
+    padding: 15px 18px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 13px;
+
+    color: var(--text-primary);
+
+    vertical-align: middle;
+}
+
+.exam-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.exam-table tbody tr:hover {
+    background: var(--primary-light);
+}
+
+.exam-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   TABLE COLUMNS
+========================================================= */
+
+.exam-table th:first-child,
+.exam-table td:first-child {
+    width: 65px;
+
+    text-align: center;
+}
+
+.exam-table th:nth-child(2),
+.exam-table td:nth-child(2) {
+    width: 150px;
+}
+
+.exam-table th:nth-child(4),
+.exam-table td:nth-child(4) {
+    width: 150px;
+    white-space: nowrap;
+}
+
+.exam-table th:nth-child(5),
+.exam-table td:nth-child(5) {
+    width: 190px;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SUBJECT CODE
+========================================================= */
+
+.exam-table td:nth-child(2) {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   EXAM DATE
+========================================================= */
+
+.exam-table td:nth-child(4) {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EXAM TIME
+========================================================= */
+
+.exam-table td:nth-child(5) {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TICKET FOOTER
+========================================================= */
+
+.ticket-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 22px;
+
+    border-top: 1px solid var(--border);
+
+    background: var(--white);
+
+    font-size: 12px;
+    font-weight: 500;
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   PRINT / DOWNLOAD BUTTON
+========================================================= */
+
+.hall-ticket-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 16px 22px;
+
+    border-top: 1px solid var(--border);
+
+    background: var(--white);
+}
+
+.print-hall-ticket {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--primary);
+    color: var(--white);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.print-hall-ticket:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.print-hall-ticket:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   NO HALL TICKET
+========================================================= */
+
+.no-hall-ticket {
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.no-hall-ticket.hidden {
+    display: none;
+}
+
+.no-ticket-icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    font-size: 25px;
+}
+
+.no-hall-ticket h3 {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: var(--text-primary);
+}
+
+.no-hall-ticket p {
+    max-width: 500px;
+
+    margin: 8px auto 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hall-ticket-content {
+        padding: 28px 25px 40px;
+    }
+
+    .hall-student-card,
+    .ticket-student-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hall-student-card > div:nth-child(2),
+    .ticket-student-details > div:nth-child(2) {
+        border-right: none;
+    }
+
+    .hall-student-card > div:nth-child(-n + 2),
+    .ticket-student-details > div:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .hall-selector-card {
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hall-ticket-content {
+        padding: 22px 16px 35px;
+    }
+
+    .hall-ticket-heading {
+        margin-bottom: 18px;
+    }
+
+    .hall-ticket-heading h2 {
+        font-size: 23px;
+    }
+
+    .hall-ticket-heading p {
+        font-size: 13px;
+    }
+
+
+    /* Student card */
+
+    .hall-student-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hall-student-card > div {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .hall-student-card > div:last-child {
+        border-bottom: none;
+    }
+
+
+    /* Semester selector */
+
+    .hall-selector-card {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 15px;
+
+        padding: 18px;
+    }
+
+    #semesterSelect {
+        width: 100%;
+    }
+
+
+    /* Hall ticket header */
+
+    .hall-ticket-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 20px;
+    }
+
+    .hall-ticket-badge {
+        min-width: auto;
+    }
+
+
+    /* Ticket student details */
+
+    .ticket-student-details {
+        grid-template-columns: 1fr;
+    }
+
+    .ticket-student-details > div {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .ticket-student-details > div:last-child {
+        border-bottom: none;
+    }
+
+
+    /* Exam table */
+
+    .exam-table {
+        min-width: 750px;
+    }
+
+    .exam-table th,
+    .exam-table td {
+        padding: 12px 14px;
+    }
+
+
+    /* Footer */
+
+    .ticket-footer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 14px 18px;
+    }
+
+
+    /* Button */
+
+    .hall-ticket-actions {
+        justify-content: stretch;
+
+        padding: 15px 18px;
+    }
+
+    .print-hall-ticket {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   A4 PRINT / SAVE AS PDF
+========================================================= */
+
+@page {
+    size: A4 portrait;
+    margin: 12mm;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 210mm;
+        min-height: 297mm;
+
+        background: #ffffff !important;
+    }
+
+
+    /* Hide portal elements */
+
+    .sidebar,
+    .top-header,
+    .hall-ticket-heading,
+    .hall-selector-card,
+    .hall-ticket-actions {
+        display: none !important;
+    }
+
+
+    /* Main layout */
+
+    .portal-layout {
+        display: block !important;
+    }
+
+    .main-content {
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .hall-ticket-content {
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    /* Student information */
+
+    .hall-student-card {
+        display: grid !important;
+
+        margin-bottom: 12px !important;
+
+        box-shadow: none !important;
+
+        border: 1px solid #222 !important;
+    }
+
+
+    /* Hall ticket */
+
+    .hall-ticket-card {
+        display: block !important;
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        border: 1px solid #222 !important;
+        border-radius: 0 !important;
+
+        box-shadow: none !important;
+
+        background: #ffffff !important;
+
+        overflow: visible !important;
+    }
+
+
+    .hall-ticket-header {
+        padding: 18px 20px !important;
+
+        border-bottom: 1px solid #222 !important;
+    }
+
+
+    .hall-ticket-title {
+        color: #222 !important;
+    }
+
+
+    .hall-ticket-header h3,
+    .hall-ticket-header p {
+        color: #222 !important;
+    }
+
+
+    .hall-ticket-badge {
+        background: #eeeeee !important;
+        color: #222 !important;
+    }
+
+
+    /* Student details */
+
+    .ticket-student-details {
+        display: grid !important;
+
+        border-bottom: 1px solid #222 !important;
+    }
+
+    .ticket-student-details > div {
+        border-right: 1px solid #ccc !important;
+    }
+
+
+    /* Table */
+
+    .exam-table-container {
+        overflow: visible !important;
+    }
+
+    .exam-table {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        border-collapse: collapse !important;
+    }
+
+    .exam-table thead {
+        background: #eeeeee !important;
+    }
+
+    .exam-table th,
+    .exam-table td {
+        padding: 9px 10px !important;
+
+        border: 1px solid #222 !important;
+
+        color: #111 !important;
+    }
+
+    .exam-table th {
+        font-size: 11px !important;
+    }
+
+    .exam-table td {
+        font-size: 11px !important;
+    }
+
+    .exam-table td:nth-child(2) {
+        color: #111 !important;
+    }
+
+
+    /* Footer */
+
+    .ticket-footer {
+        border-top: 1px solid #222 !important;
+
+        padding: 12px 15px !important;
+
+        color: #222 !important;
+    }
+
+
+    /* Remove shadows everywhere */
+
+    * {
+        box-shadow: none !important;
+    }
+}

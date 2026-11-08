@@ -1,0 +1,359 @@
+
+.documents-content {
+    padding: 26px 30px 35px;
+    max-width: 1450px;
+    margin: auto;
+    color: #263247;
+}
+
+.documents-heading {
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    color: #5865d8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.documents-heading h2 {
+    font-size: 23px;
+    margin: 8px 0;
+}
+
+.documents-heading p {
+    color: #7b8597;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.document-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e4e8f0;
+    margin-bottom: 23px;
+}
+
+.document-tab {
+    padding: 12px 16px;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    background: transparent;
+    color: #778195;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.document-tab.active {
+    color: #4e5bd5;
+    border-bottom-color: #4e5bd5;
+}
+
+.document-section[hidden] {
+    display: none !important;
+}
+
+.semester-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.semester-controls label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.semester-controls select {
+    min-width: 160px;
+    padding: 10px 12px;
+    border: 1px solid #dfe4ee;
+    border-radius: 8px;
+    background: #fff;
+    color: #344054;
+    font-size: 13px;
+}
+
+.grade-sheet {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #e0e5ee;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(25, 40, 70, .05);
+}
+
+.grade-sheet-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #3949ab;
+}
+
+.grade-sheet-header h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.grade-sheet-header h3 {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.student-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 28px;
+    padding: 25px 0;
+}
+
+.student-details-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.student-details-grid span {
+    color: #727e91;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.student-details-grid strong {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.grade-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.grade-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.grade-table th,
+.grade-table td {
+    padding: 13px 15px;
+    border: 1px solid #dfe4ed;
+    text-align: left;
+}
+
+.grade-table th {
+    background: #f0f2ff;
+    color: #303e91;
+}
+
+.grade-table th:first-child,
+.grade-table td:first-child {
+    width: 75px;
+    text-align: center;
+}
+
+.grade-table th:last-child,
+.grade-table td:last-child {
+    width: 120px;
+    text-align: center;
+}
+
+.grade-table .summary-row {
+    background: #f0f2ff;
+    font-weight: 700;
+}
+
+.grade-sheet-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+    color: #8993a4;
+    font-size: 11px;
+}
+
+.grade-sheet-footer button {
+    border: 0;
+    border-radius: 7px;
+    padding: 10px 15px;
+    background: #4e5bd5;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.message-box {
+    padding: 13px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: #fff5e5;
+    color: #805d19;
+    font-size: 12px;
+}
+
+.message-box[hidden] {
+    display: none;
+}
+
+/* Application form cards */
+.form-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #e6eaf2;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(30, 45, 75, .035);
+}
+
+.form-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 15px;
+    border-radius: 9px;
+    background: #fff0ef;
+    color: #d54848;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.form-category {
+    color: #6672d4;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .7px;
+}
+
+.form-card h3 {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 9px 0;
+}
+
+.form-card p {
+    flex: 1;
+    color: #7c8799;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0 0 18px;
+}
+
+.form-action {
+    display: block;
+    text-align: center;
+    padding: 11px;
+    border: 1px solid #dfe3ff;
+    border-radius: 8px;
+    background: #f4f5ff;
+    color: #4653c6;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-action:hover {
+    background: #4e5bd5;
+    color: #fff;
+}
+
+@media (max-width: 1050px) {
+    .form-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .documents-content {
+        padding: 20px 14px;
+    }
+
+    .grade-sheet {
+        padding: 16px;
+    }
+
+    .student-details-grid {
+        gap: 16px;
+    }
+
+    .form-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-table th,
+    .grade-table td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #gradeSheet,
+    #gradeSheet * {
+        visibility: visible;
+    }
+
+    #gradeSheet {
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        max-width: none;
+        padding: 15px;
+        border: 0;
+        box-shadow: none;
+        box-sizing: border-box;
+    }
+
+    .grade-sheet-footer,
+    .semester-controls {
+        display: none !important;
+    }
+}
+
+.document-welcome {
+    padding: 55px 25px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.document-welcome h2 {
+    margin: 0 0 10px;
+    font-size: 21px;
+}
+
+.document-welcome p {
+    margin: 0;
+    color: #7b8597;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.document-welcome[hidden] {
+    display: none !important;
+}

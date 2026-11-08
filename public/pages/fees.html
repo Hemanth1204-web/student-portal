@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Fees | Apex Student Portal</title>
+
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Global CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+
+    <!-- Fees CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/css/fees.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="portal-layout">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                A
+            </div>
+
+            <div class="brand-text">
+
+                <h2>APEX</h2>
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="/pages/dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a
+                href="/pages/profile.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ○
+                </span>
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+            <!-- ACADEMICS -->
+
+            <div class="academics-wrapper">
+
+
+                <button
+                    type="button"
+                    class="academics-toggle"
+                    id="academicsToggle"
+                >
+
+                    <span class="academics-title-left">
+
+                        <span class="nav-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Academics
+                        </span>
+
+                    </span>
+
+
+                    <span
+                        class="academics-arrow"
+                        id="academicsArrow"
+                    >
+                        ▾
+                    </span>
+
+                </button>
+
+
+                <!-- SUBMENU -->
+
+                <div
+                    class="academics-submenu show"
+                    id="academicsSubmenu"
+                >
+
+
+                    <!-- ATTENDANCE -->
+
+                    <a
+                        href="/pages/attendance.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Attendance
+                        </span>
+
+                    </a>
+
+
+                    <!-- COURSES -->
+
+                    <a
+                        href="/pages/courses.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▤
+                        </span>
+
+                        <span>
+                            My Courses
+                        </span>
+
+                    </a>
+
+
+                    <!-- MARKS -->
+
+                    <a
+                        href="/pages/marks.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ◈
+                        </span>
+
+                        <span>
+                            Marks
+                        </span>
+
+                    </a>
+
+                    
+<a href="/pages/grade-list.html"
+   class="academic-item"
+   data-page="grade-list">
+    <span class="academic-icon">★</span>
+    <span>Grade List</span>
+</a>
+
+
+
+                    <!-- FEES -->
+
+                    <a
+                        href="/pages/fees.html"
+                        class="academic-item active"
+                    >
+
+                        <span class="academic-icon">
+                            ₹
+                        </span>
+
+                        <span>
+                            Fees
+                        </span>
+
+                    </a>
+
+
+                    <!-- HALL TICKET -->
+
+                    <a
+                        href="/pages/hallticket.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▫
+                        </span>
+
+                        <span>
+                            Hall Ticket
+                        </span>
+
+                    </a>
+
+
+                    <!-- NOTICES -->
+
+                    <a
+                        href="/pages/notices.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            !
+                        </span>
+
+                        <span>
+                            Notices
+                        </span>
+
+                    </a>
+
+
+                    <!-- DOCUMENTS -->
+
+                    <a
+                        href="/pages/documents.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▫
+                        </span>
+
+                        <span>
+                            Documents
+                        </span>
+
+                    </a>
+
+                    <a href="#"
+               class="academic-item"
+               data-page="timetable">
+
+                <span class="academic-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <a
+                href="/pages/settings.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                id="logoutButton"
+                class="nav-item logout-item"
+            >
+
+                <span class="nav-icon">
+                    ↪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+
+            <div class="sidebar-profile">
+
+
+                <div
+                    class="profile-avatar"
+                    id="sidebarAvatar"
+                >
+                    S
+                </div>
+
+
+                <div class="profile-info">
+
+                    <strong id="sidebarName">
+                        Student
+                    </strong>
+
+                    <span id="sidebarEnrollment">
+                        Student
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="profile-more"
+                >
+                    •••
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+
+            <div class="header-left">
+
+                <div>
+
+                    <div class="college-name">
+                        APEX INSTITUTE OF TECHNOLOGY
+                    </div>
+
+                    <h1>
+                        Fees
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <button
+                    type="button"
+                    class="header-icon"
+                >
+                    ♧
+
+                    <span
+                        class="header-notification-dot"
+                    ></span>
+
+                </button>
+
+
+                <div class="header-profile">
+
+
+                    <div
+                        class="header-avatar"
+                        id="headerAvatar"
+                    >
+                        S
+                    </div>
+
+
+                    <div class="header-profile-info">
+
+                        <strong id="headerName">
+                            Student
+                        </strong>
+
+                        <span id="headerEnrollment">
+                            Student
+                        </span>
+
+                    </div>
+
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =========================================
+             FEES CONTENT
+        ========================================== -->
+
+        <section class="fees-content">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="fees-heading">
+
+
+                <div>
+
+                    <div class="fees-label">
+                        ACADEMICS
+                    </div>
+
+
+                    <h2>
+                        Fee Details
+                    </h2>
+
+
+                    <p>
+                        View your semester-wise fee payment details.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =====================================
+                 FEE STATUS
+            ====================================== -->
+
+            <div class="fee-overview">
+
+
+                <div class="overview-item">
+
+                    <span>
+                        Student
+                    </span>
+
+                    <strong id="feeStudentName">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="overview-item">
+
+                    <span>
+                        Enrollment No.
+                    </span>
+
+                    <strong id="feeEnrollment">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="overview-item">
+
+                    <span>
+                        Residence
+                    </span>
+
+                    <strong id="residenceType">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="overview-item">
+
+                    <span>
+                        Transport
+                    </span>
+
+                    <strong id="transportType">
+                        --
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =====================================
+                 FEE TABLE CARD
+            ====================================== -->
+
+            <div class="fees-card">
+
+
+                <div class="fees-card-header">
+
+
+                    <div>
+
+                        <h3>
+                            Semester Fee Details
+                        </h3>
+
+                        <p>
+                            Fee payment history for all completed semesters.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="fees-table-container">
+
+
+                    <table class="fees-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    S.No
+                                </th>
+
+                                <th>
+                                    Semester
+                                </th>
+
+                                <th>
+                                    Sem Fee
+                                </th>
+
+                                <th>
+                                    Bus Fee
+                                </th>
+
+                                <th>
+                                    Hostel Fee
+                                </th>
+
+                                <th>
+                                    Total Paid
+                                </th>
+
+                                <th>
+                                    Paid Date
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="feesTableBody">
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="feesLoading"
+                    class="fees-message"
+                >
+
+                    <div class="message-icon">
+                        ₹
+                    </div>
+
+                    <h3>
+                        Loading Fee Details
+                    </h3>
+
+                    <p>
+                        Please wait while your fee records are loaded.
+                    </p>
+
+                </div>
+
+
+                <!-- NO FEES -->
+
+                <div
+                    id="noFees"
+                    class="fees-message hidden"
+                >
+
+                    <div class="message-icon">
+                        ₹
+                    </div>
+
+                    <h3>
+                        No Fee Records
+                    </h3>
+
+                    <p>
+                        No fee payment records are available.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="/js/global.js"></script>
+
+<script src="/js/fees.js?v=1"></script>
+<script src="/js/global.js"></script>
+
+
+</body>
+
+</html>

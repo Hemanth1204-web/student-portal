@@ -1,0 +1,721 @@
+/* =========================================
+   APEX STUDENT PORTAL
+   MARKS PAGE
+========================================= */
+
+
+/* =========================================
+   PAGE CONTENT
+========================================= */
+
+.marks-content {
+
+    padding: 30px 35px 45px;
+
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.marks-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.marks-label {
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.marks-heading h2 {
+
+    margin: 0 0 6px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+}
+
+
+.marks-heading p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   STUDENT INFO
+========================================= */
+
+.student-info-box {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 13px 18px;
+
+    min-width: 205px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+.student-info-box strong {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.student-info-box span {
+
+    margin-top: 4px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   MARKS OVERVIEW
+========================================= */
+
+.marks-overview {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.overview-item {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 17px 19px;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+.overview-item span {
+
+    display: block;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.overview-item strong {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   SEMESTER SELECTOR
+========================================= */
+
+.semester-selector-card {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 18px 20px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+.semester-selector-card h3 {
+
+    margin: 0 0 4px;
+
+    font-size: 14px;
+
+}
+
+
+.semester-selector-card p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+#semesterSelect {
+
+    min-width: 145px;
+
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: var(--white);
+
+    color: var(--text-primary);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    outline: none;
+
+    cursor: pointer;
+
+}
+
+
+#semesterSelect:focus {
+
+    border-color: var(--primary);
+
+}
+
+
+/* =========================================
+   MARKS CARD
+========================================= */
+
+.marks-card {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+/* =========================================
+   MARKS CARD HEADER
+========================================= */
+
+.marks-card-header {
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.marks-card-header h3 {
+
+    margin: 0 0 4px;
+
+    font-size: 17px;
+
+}
+
+
+.marks-card-header p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   CURRENT SEMESTER MESSAGE
+========================================= */
+
+.current-semester-message {
+
+    margin: 18px;
+
+    padding: 18px 20px;
+
+    background: var(--primary-light);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.message-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+}
+
+
+.current-semester-message h3 {
+
+    margin: 0 0 4px;
+
+    font-size: 14px;
+
+}
+
+
+.current-semester-message p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   MARKS SUMMARY
+========================================= */
+
+.marks-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    padding: 20px 24px;
+
+}
+
+
+.summary-box {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 17px 19px;
+
+}
+
+
+.summary-box span {
+
+    display: block;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.summary-box strong {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: var(--text-primary);
+
+}
+
+
+/* =========================================
+   MARKS SECTION
+========================================= */
+
+.marks-section {
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.section-title {
+
+    padding: 18px 24px 12px;
+
+}
+
+
+.section-title h3 {
+
+    margin: 0 0 4px;
+
+    font-size: 15px;
+
+}
+
+
+.section-title span {
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding: 0 24px 20px;
+
+}
+
+
+.marks-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 700px;
+
+}
+
+
+.marks-table th {
+
+    background: #fafbff;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    padding: 12px 12px;
+
+    text-align: center;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.marks-table th:first-child,
+.marks-table th:nth-child(2) {
+
+    text-align: left;
+
+}
+
+
+.marks-table th small {
+
+    color: var(--text-secondary);
+
+    font-size: 8px;
+
+}
+
+
+.marks-table td {
+
+    padding: 14px 12px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 10px;
+
+    text-align: center;
+
+}
+
+
+.marks-table td:first-child,
+.marks-table td:nth-child(2) {
+
+    text-align: left;
+
+}
+
+
+.marks-table td:first-child {
+
+    color: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+.marks-table td:nth-child(2) {
+
+    color: var(--text-primary);
+
+    font-weight: 500;
+
+}
+
+
+.marks-table tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+.total-cell {
+
+    color: var(--text-primary);
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   NO MARKS
+========================================= */
+
+.no-marks {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+}
+
+
+.no-marks-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.no-marks h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 15px;
+
+}
+
+
+.no-marks p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   UTILITY
+========================================= */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .marks-overview,
+    .marks-summary {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .marks-content {
+
+        padding: 22px 18px 35px;
+
+    }
+
+
+    .marks-heading {
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+
+    .student-info-box {
+
+        align-items: flex-start;
+
+    }
+
+
+    .marks-overview,
+    .marks-summary {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .semester-selector-card {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    #semesterSelect {
+
+        width: 100%;
+
+    }
+
+
+    .marks-table {
+
+        min-width: 700px;
+
+    }
+
+
+    .table-container {
+
+        padding-left: 16px;
+
+        padding-right: 16px;
+
+    }
+
+}

@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Students | Apex Faculty Portal</title>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/faculty/css/my-students.css">
+</head>
+<body>
+<div class="portal">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>Apex</h2>
+                <p>Faculty Portal</p>
+            </div>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="navigation">
+            <a href="/faculty/pages/faculty-dashboard.html" class="nav-link">
+                <span>▦</span> Dashboard
+            </a>
+            <a href="/faculty/pages/my-subjects.html" class="nav-link">
+                <span>▤</span> My Subjects
+            </a>
+            <a href="/faculty/pages/my-students.html" class="nav-link active">
+                <span>♙</span> My Students
+            </a>
+            <a href="/faculty/pages/attendance.html" class="nav-link">
+                <span>✓</span> Attendance
+            </a>
+            <a href="/faculty/pages/marks.html" class="nav-link">
+                <span>▧</span> Marks Management
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="/faculty/pages/profile.html" class="nav-link"><span>⚙</span> Profile </a>
+             <a href="/faculty/pages/settings.html" class="nav-link">
+    <span>⚙</span> Settings </a>
+            <button id="logoutBtn" class="logout-btn" type="button">
+                <span>↪</span> Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Faculty / My Students</p>
+                <h1>My Students</h1>
+                <p class="page-description">
+                    View students from your assigned subjects and sections.
+                </p>
+            </div>
+
+            <div class="profile-summary">
+                <div class="avatar" id="avatar">F</div>
+                <div>
+                    <strong id="facultyName">Loading...</strong>
+                    <p id="facultyId">Faculty ID</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <p class="eyebrow">STUDENT DIRECTORY</p>
+                <h2>Manage Your Students</h2>
+                <p>Student records are filtered using your teaching assignments.</p>
+            </div>
+            <div class="welcome-icon">🎓</div>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon purple">♙</div>
+                <div>
+                    <p>Total Students</p>
+                    <h3 id="totalStudents">—</h3>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon blue">▤</div>
+                <div>
+                    <p>Subjects Assigned</p>
+                    <h3 id="totalSubjects">—</h3>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon green">▣</div>
+                <div>
+                    <p>Sections Assigned</p>
+                    <h3 id="totalSections">—</h3>
+                </div>
+            </article>
+        </section>
+
+        <section class="content-card">
+            <div class="card-heading">
+                <div>
+                    <h2>Student Records</h2>
+                    <p id="resultCount">Loading students...</p>
+                </div>
+
+                <button type="button" id="refreshBtn" class="refresh-btn">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group search-group">
+                    <label for="studentSearch">Search student</label>
+                    <input
+                        type="search"
+                        id="studentSearch"
+                        placeholder="Enrollment number or student name..."
+                    >
+                </div>
+
+                <div class="filter-group">
+                    <label for="subjectFilter">Subject</label>
+                    <select id="subjectFilter">
+                        <option value="">All assigned subjects</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="yearFilter">Year</label>
+                    <select id="yearFilter">
+                        <option value="">All years</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="semesterFilter">Semester</label>
+                    <select id="semesterFilter">
+                        <option value="">All semesters</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sectionFilter">Section</label>
+                    <select id="sectionFilter">
+                        <option value="">All sections</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="statusMessage" class="status-message">
+                Loading student records...
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Enrollment Number</th>
+                            <th>Student Name</th>
+                            <th>Branch</th>
+                            <th>Year</th>
+                            <th>Semester</th>
+                            <th>Section</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsTable">
+                        <tr>
+                            <td colspan="7">Loading students...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="emptyState" class="empty-state" hidden>
+                <div>♙</div>
+                <h3>No students found</h3>
+                <p>Try changing the selected filters or search term.</p>
+                <button type="button" id="clearFiltersBtn">
+                    Clear Filters
+                </button>
+            </div>
+        </section>
+
+        <p id="errorMessage" class="error-message" role="alert"></p>
+
+        <footer class="footer">
+            © 2026 Apex Institute of Technology · Faculty Portal
+        </footer>
+    </main>
+</div>
+
+<script src="/faculty/js/my-students.js"></script>
+</body>
+</html>

@@ -1,0 +1,810 @@
+/* ==========================================
+   ATTENDANCE PAGE
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f4f6fb;
+    color: #101828;
+}
+
+
+/* ==========================================
+   LAYOUT
+========================================== */
+
+.portal-layout {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* ==========================================
+   PAGE CONTENT
+========================================== */
+
+.attendance-content {
+    padding: 42px 48px 60px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.page-label {
+    color: #5146e5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.page-heading h2 {
+    margin: 8px 0 6px;
+    font-size: 30px;
+}
+
+.page-heading p {
+    margin: 0;
+    color: #667085;
+    font-size: 14px;
+}
+
+.student-info-box {
+    background: white;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    padding: 16px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.student-info-box strong {
+    font-size: 16px;
+}
+
+.student-info-box span {
+    margin-top: 5px;
+    color: #667085;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   SUMMARY CARDS
+========================================== */
+
+.attendance-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.summary-card {
+    background: white;
+    border: 1px solid #e4e7ec;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 2px 5px rgba(16, 24, 40, 0.03);
+}
+
+.summary-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.summary-icon.percentage {
+    background: #e8faf3;
+    color: #12b886;
+}
+
+.summary-icon.classes {
+    background: #eef2ff;
+    color: #5146e5;
+}
+
+.summary-icon.attended {
+    background: #ecfdf3;
+    color: #16a34a;
+}
+
+.summary-icon.subjects {
+    background: #f4e8ff;
+    color: #9333ea;
+}
+
+.summary-card span {
+    display: block;
+    color: #667085;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.summary-card strong {
+    font-size: 25px;
+}
+
+
+/* ==========================================
+   ATTENDANCE CARD
+========================================== */
+
+.attendance-card {
+    background: white;
+    border: 1px solid #e4e7ec;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(16, 24, 40, 0.03);
+}
+
+.card-header {
+    padding: 26px 30px;
+    border-bottom: 1px solid #eaecf0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+}
+
+.card-header p {
+    margin: 0;
+    color: #667085;
+    font-size: 13px;
+}
+
+.attendance-status {
+    padding: 9px 15px;
+    background: #eef2ff;
+    color: #5146e5;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f8f9fc;
+}
+
+th {
+    padding: 17px 22px;
+    text-align: left;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 20px 22px;
+    border-top: 1px solid #eaecf0;
+    font-size: 14px;
+}
+
+.subject-name {
+    font-weight: 600;
+    color: #101828;
+}
+
+.subject-code {
+    color: #667085;
+    font-size: 13px;
+}
+
+.attendance-percent {
+    font-weight: 700;
+}
+
+.progress-container {
+    width: 130px;
+    height: 7px;
+    background: #eaecf0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status.good {
+    background: #ecfdf3;
+    color: #079455;
+}
+
+.status.average {
+    background: #fffaeb;
+    color: #b54708;
+}
+
+.status.low {
+    background: #fef3f2;
+    color: #d92d20;
+}
+
+.loading {
+    text-align: center;
+    padding: 50px;
+    color: #667085;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .attendance-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .top-header {
+        padding: 0 25px;
+    }
+
+    .attendance-content {
+        padding: 30px 25px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+}
+
+/* =========================================
+   MATCH DASHBOARD SIDEBAR EXACTLY
+========================================= */
+
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background: var(--sidebar);
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px 14px;
+
+    z-index: 1000;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================
+   SIDEBAR BRAND
+========================================= */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px 25px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-brand .brand-logo {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    margin-right: 11px;
+}
+
+.sidebar-brand .brand-text strong {
+    color: white;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.sidebar-brand .brand-text span {
+    display: block;
+
+    color: #9ca3af;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   SIDEBAR MENU
+========================================= */
+
+.sidebar-menu {
+    margin-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0;
+}
+
+
+/* MAIN MENU TITLE */
+
+.sidebar-menu .menu-title {
+    color: #6b7280;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    padding: 0 13px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   NORMAL MENU ITEMS
+========================================= */
+
+.sidebar-menu .menu-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 44px;
+
+    height: 44px;
+
+    padding: 0 13px;
+
+    margin-bottom: 4px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+    background: transparent;
+
+    border: none;
+}
+
+
+/* HOVER */
+
+.sidebar-menu .menu-item:hover {
+    color: white;
+
+    background: #1f2937;
+
+    transform: translateX(2px);
+}
+
+
+/* ACTIVE */
+
+.sidebar-menu .menu-item.active {
+    background: var(--primary);
+
+    color: white;
+
+    box-shadow:
+        0 4px 10px rgba(79, 70, 229, 0.25);
+
+    transform: none;
+}
+
+
+/* ICON */
+
+.sidebar-menu .menu-icon {
+    width: 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    margin-right: 9px;
+}
+
+
+/* =========================================
+   ACADEMICS BUTTON
+   SAME AS DASHBOARD
+========================================= */
+
+.academics-toggle {
+    position: relative;
+
+    width: 100%;
+
+    height: 44px;
+
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 13px;
+
+    margin-bottom: 4px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #9ca3af;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    box-shadow: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* ACADEMICS HOVER */
+
+.academics-toggle:hover {
+    background: #1f2937;
+
+    color: white;
+
+    transform: translateX(2px);
+}
+
+
+/* ACADEMICS LEFT SIDE */
+
+.academics-title-left {
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* ACADEMICS ICON */
+
+.academics-toggle .menu-icon,
+.academics-toggle .nav-icon {
+    width: 25px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
+
+    margin-right: 9px;
+}
+
+
+/* ARROW */
+
+.academics-arrow {
+    margin-left: auto;
+
+    color: #9ca3af;
+
+    font-size: 8px;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* OPEN ARROW */
+
+.academics-toggle.open .academics-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   ACADEMICS SUBMENU
+========================================= */
+
+.academics-submenu {
+    display: none;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-top: 2px;
+
+    padding-left: 12px;
+}
+
+
+/* OPEN */
+
+.academics-submenu.open {
+    display: flex;
+}
+
+
+/* =========================================
+   ACADEMIC SUBMENU ITEMS
+========================================= */
+
+.academics-submenu .academic-item {
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 14px;
+
+    border-radius: 8px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* SUBMENU HOVER */
+
+.academics-submenu .academic-item:hover {
+    background: #1f2937;
+
+    color: white;
+}
+
+
+/* ACTIVE SUBMENU */
+
+.academics-submenu .academic-item.active {
+    background: var(--primary);
+
+    color: white;
+}
+
+
+/* =========================================
+   SIDEBAR BOTTOM
+========================================= */
+
+.sidebar-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding-top: 12px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   SIDEBAR PROFILE
+========================================= */
+
+.sidebar-profile {
+    display: flex;
+
+    align-items: center;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-profile .profile-avatar {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.sidebar-profile .profile-info {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-left: 9px;
+
+    overflow: hidden;
+}
+
+.sidebar-profile .profile-info strong {
+    color: white;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+.sidebar-profile .profile-info span {
+    color: #9ca3af;
+
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+.sidebar-profile .profile-more {
+    margin-left: auto;
+
+    background: transparent;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    margin-left: var(--sidebar-width);
+
+    min-height: 100vh;
+
+    width: auto;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+.college-name {
+    color: var(--primary);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin-bottom: 4px;
+}
+
+.header-left h1 {
+    font-size: 19px;
+    font-weight: 600;
+}

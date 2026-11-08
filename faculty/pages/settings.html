@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | Apex Faculty Portal</title>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/faculty/css/faculty-dashboard.css">
+    <link rel="stylesheet" href="/faculty/css/settings.css">
+</head>
+
+<body>
+<div class="portal">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>Apex</h2>
+                <p>Faculty Portal</p>
+            </div>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="navigation">
+
+            <a href="/faculty/pages/faculty-dashboard.html" class="nav-link">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="/faculty/pages/my-subjects.html" class="nav-link">
+                <span>▤</span> My Subjects
+            </a>
+
+            <a href="/faculty/pages/my-students.html" class="nav-link">
+                <span>♙</span> My Students
+            </a>
+
+            <a href="/faculty/pages/attendance.html" class="nav-link">
+                <span>✓</span> Attendance
+            </a>
+
+            <a href="/faculty/pages/marks.html" class="nav-link">
+                <span>▧</span> Marks Management
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="/faculty/pages/profile.html" class="nav-link">
+                <span>⚙</span> Profile
+            </a>
+             <a href="/faculty/pages/settings.html" class="nav-link">
+    <span>⚙</span> Settings</a>
+
+            <button type="button" id="logoutBtn" class="logout-btn">
+                <span>↪</span> Logout
+            </button>
+
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">Faculty / Settings</p>
+                <h1>Settings</h1>
+            </div>
+
+            <div class="profile-summary">
+                <div class="avatar" id="avatar">F</div>
+
+                <div>
+                    <strong id="facultyName">Loading...</strong>
+                    <p id="facultyId">Faculty ID</p>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- SETTINGS CONTENT -->
+        <section class="settings-content">
+
+            <div class="page-heading">
+                <p class="eyebrow">ACCOUNT PREFERENCES</p>
+                <h2>Account Settings</h2>
+                <p>Manage your account security and password.</p>
+            </div>
+
+            <section class="settings-card">
+
+                <div class="settings-card-heading">
+                    <div class="settings-icon">🔒</div>
+
+                    <div>
+                        <h2>Change Password</h2>
+                        <p>Update your faculty account password.</p>
+                    </div>
+                </div>
+
+                <div class="settings-divider"></div>
+
+                <form id="changePasswordForm">
+
+                    <div class="form-group">
+                        <label for="currentPassword">
+                            Current Password
+                        </label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="currentPassword"
+                                placeholder="Enter current password"
+                                required
+                                autocomplete="current-password"
+                            >
+
+                            <button type="button"
+                                    class="toggle-password"
+                                    data-target="currentPassword">
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPassword">
+                            New Password
+                        </label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="newPassword"
+                                placeholder="Enter new password"
+                                required
+                                minlength="8"
+                                autocomplete="new-password"
+                            >
+
+                            <button type="button"
+                                    class="toggle-password"
+                                    data-target="newPassword">
+                                Show
+                            </button>
+                        </div>
+
+                        <small>Use at least 8 characters.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">
+                            Confirm New Password
+                        </label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm new password"
+                                required
+                                minlength="8"
+                                autocomplete="new-password"
+                            >
+
+                            <button type="button"
+                                    class="toggle-password"
+                                    data-target="confirmPassword">
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <p id="passwordMessage"
+                       class="password-message"
+                       role="status"></p>
+
+                    <button type="submit"
+                            id="changePasswordBtn"
+                            class="change-password-btn">
+                        Change Password
+                    </button>
+
+                </form>
+
+            </section>
+
+            <footer class="footer">
+                © 2026 Apex Institute of Technology · Faculty Portal
+            </footer>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="/faculty/js/settings.js"></script>
+</body>
+</html>

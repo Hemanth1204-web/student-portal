@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Apex Student Portal</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+
+    <link rel="stylesheet" href="/css/profile.css">
+
+</head>
+
+<body class="profile-page">
+
+<div class="portal-layout">
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+  <!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <!-- College Branding -->
+    <div class="brand">
+
+        <div class="brand-logo">
+            A
+        </div>
+
+        <div class="brand-text">
+            <h2>APEX</h2>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+    <nav class="sidebar-nav">
+
+        <p class="menu-title">MAIN MENU</p>
+
+
+        <!-- Dashboard -->
+        <a href="/pages/dashboard.html"
+           class="nav-item"
+           data-page="dashboard">
+
+            <span class="nav-icon">⌂</span>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- Profile -->
+        <a href="/pages/profile.html"
+           class="nav-item active"
+           data-page="profile">
+
+            <span class="nav-icon">◯</span>
+
+            <span>My Profile</span>
+
+        </a>
+
+
+        <!-- Academics -->
+        <button
+            type="button"
+            class="academics-toggle"
+            id="academicsToggle">
+
+            <span class="academics-title-left">
+
+                <span class="nav-icon">▣</span>
+
+                <span>Academics</span>
+
+            </span>
+
+            <span
+                class="academics-arrow"
+                id="academicsArrow">
+
+                ▾
+
+            </span>
+
+        </button>
+
+
+        <!-- Academics Submenu -->
+        <div
+            class="academics-submenu"
+            id="academicsSubmenu">
+
+
+            <a href="/pages/attendance.html"
+               class="academic-item"
+               data-page="attendance">
+
+                <span class="academic-icon">▣</span>
+
+                <span>Attendance</span>
+
+            </a>
+
+
+            <a href="/pages/courses.html"
+               class="academic-item"
+               data-page="courses">
+
+                <span class="academic-icon">▤</span>
+
+                <span>My Courses</span>
+
+            </a>
+
+
+            <a href="/pages/marks.html"
+               class="academic-item"
+               data-page="marks">
+
+                <span class="academic-icon">✎</span>
+
+                <span>Marks</span>
+
+            </a>
+
+            
+<a href="/pages/grade-list.html"
+   class="academic-item"
+   data-page="grade-list">
+    <span class="academic-icon">★</span>
+    <span>Grade List</span>
+</a>
+
+
+
+            <a href="/pages/fees.html"
+               class="academic-item"
+               data-page="fees">
+
+                <span class="academic-icon">₹</span>
+
+                <span>Fees</span>
+
+            </a>
+
+
+            <a href="/pages/hallticket.html"
+               class="academic-item"
+               data-page="hall-ticket">
+
+                <span class="academic-icon">▭</span>
+
+                <span>Hall Ticket</span>
+
+            </a>
+
+
+            <a href="/pages/notices.html"
+               class="academic-item"
+               data-page="notices">
+
+                <span class="academic-icon">!</span>
+
+                <span>Notices</span>
+
+            </a>
+
+
+            <a href="/pages/documents.html"
+               class="academic-item"
+               data-page="documents">
+
+                <span class="academic-icon">□</span>
+
+                <span>Documents</span>
+
+            </a>
+
+
+            <a href="#"
+               class="academic-item"
+               data-page="timetable">
+
+                <span class="academic-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+
+            
+
+
+        </div>
+
+    </nav>
+
+
+    <!-- Bottom Menu -->
+    <div class="sidebar-bottom">
+
+        <a href="#"
+           class="nav-item"
+           data-page="settings">
+
+            <span class="nav-icon">⚙</span>
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <a href="#"
+           class="nav-item logout-item">
+
+            <span class="nav-icon">↪</span>
+
+            <span>Logout</span>
+
+        </a>
+
+    </div>
+
+
+    <!-- Student Mini Profile -->
+    <div class="sidebar-profile">
+
+        <div class="profile-avatar" id="sidebarAvatar">
+            K
+        </div>
+
+        <div class="profile-info">
+
+            <strong id="sidebarStudentName">
+                K Gaurav
+            </strong>
+
+            <span>Student</span>
+
+        </div>
+
+        <button class="profile-more">
+            •••
+        </button>
+
+    </div>
+
+</aside>
+
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    =========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+
+
+     <header class="top-header">
+
+    <div class="header-left">
+
+        <button class="mobile-menu" id="mobileMenu">
+            ☰
+        </button>
+
+        <div>
+
+            <p class="college-name">
+                APEX INSTITUTE OF TECHNOLOGY
+            </p>
+
+            <h1>My Profile</h1>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <button class="header-icon notification-button">
+            ♧
+            <span class="header-notification-dot"></span>
+        </button>
+
+
+        <div class="header-profile">
+
+            <div class="header-avatar" id="avatarLetter">
+                K
+            </div>
+
+            <div class="header-profile-info">
+
+                <strong id="headerStudentName">
+                    K Gaurav
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+            <span class="dropdown-arrow">
+                ▼
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+        <!-- ==========================================
+             PROFILE CONTENT
+        =========================================== -->
+
+        <section class="profile-content">
+
+
+            <!-- PROFILE HERO -->
+
+            <div class="profile-banner">
+
+                <div class="large-avatar"
+                     id="profileAvatar">
+
+                    A
+
+                </div>
+
+
+                <div class="profile-main-info">
+
+                    <h2 id="profileStudentName">
+                        Loading...
+                    </h2>
+
+                    <p id="profileEnrollment">
+                        Loading...
+                    </p>
+
+                    <span class="profile-status">
+                        ● Active Student
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 PERSONAL INFORMATION
+            ======================================= -->
+
+            <div class="profile-card">
+
+                <div class="card-title">
+
+                    <div class="title-icon">
+                        ♙
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Personal Information
+                        </h3>
+
+                        <p>
+                            Your personal and contact details
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="fullName">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Enrollment Number
+                        </span>
+
+                        <strong id="enrollmentNumber">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Gender
+                        </span>
+
+                        <strong id="gender">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Date of Birth
+                        </span>
+
+                        <strong id="dateOfBirth">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong id="email">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Phone Number
+                        </span>
+
+                        <strong id="phone">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 ACADEMIC INFORMATION
+            ======================================= -->
+
+            <div class="profile-card">
+
+                <div class="card-title">
+
+                    <div class="title-icon academic-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Academic Information
+                        </h3>
+
+                        <p>
+                            Your current academic details
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-grid">
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Course
+                        </span>
+
+                        <strong id="course">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Branch
+                        </span>
+
+                        <strong id="branch">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Batch
+                        </span>
+
+                        <strong id="batch">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Year of Study
+                        </span>
+
+                        <strong id="yearOfStudy">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Current Semester
+                        </span>
+
+                        <strong id="semester">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <span>
+                            Section
+                        </span>
+
+                        <strong id="section">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<script src="/js/profile.js"></script>
+<script src="/js/global.js"></script>
+</body>
+
+</html>

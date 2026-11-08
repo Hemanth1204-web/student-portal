@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Marks | Apex Student Portal</title>
+
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Global CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+
+    <!-- Marks CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/css/marks.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="portal-layout">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                A
+            </div>
+
+            <div class="brand-text">
+
+                <h2>APEX</h2>
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <div class="menu-title">
+                MAIN MENU
+            </div>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="/pages/dashboard.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- PROFILE -->
+
+            <a
+                href="/pages/profile.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ○
+                </span>
+
+                <span>
+                    My Profile
+                </span>
+
+            </a>
+
+
+            <!-- ACADEMICS -->
+
+            <div class="academics-wrapper">
+
+
+                <button
+                    type="button"
+                    class="academics-toggle"
+                    id="academicsToggle"
+                >
+
+                    <span class="academics-title-left">
+
+                        <span class="nav-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Academics
+                        </span>
+
+                    </span>
+
+
+                    <span
+                        id="academicsArrow"
+                        class="academics-arrow"
+                    >
+                        ▾
+                    </span>
+
+                </button>
+
+
+                <!-- SUBMENU -->
+
+                <div
+                    id="academicsSubmenu"
+                    class="academics-submenu show"
+                >
+
+
+                    <!-- ATTENDANCE -->
+
+                    <a
+                        href="/pages/attendance.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▣
+                        </span>
+
+                        <span>
+                            Attendance
+                        </span>
+
+                    </a>
+
+
+                    <!-- MY COURSES -->
+
+                    <a
+                        href="/pages/courses.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▤
+                        </span>
+
+                        <span>
+                            My Courses
+                        </span>
+
+                    </a>
+
+
+                    <!-- MARKS -->
+
+                    <a
+                        href="/pages/marks.html"
+                        class="academic-item active"
+                    >
+
+                        <span class="academic-icon">
+                            ◈
+                        </span>
+
+                        <span>
+                            Marks
+                        </span>
+
+                    </a>
+
+                    
+<a href="/pages/grade-list.html"
+   class="academic-item"
+   data-page="grade-list">
+    <span class="academic-icon">★</span>
+    <span>Grade List</span>
+</a>
+
+
+
+                    <!-- FEES -->
+
+                    <a
+                        href="/pages/fees.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ₹
+                        </span>
+
+                        <span>
+                            Fees
+                        </span>
+
+                    </a>
+
+
+                    <!-- HALL TICKET -->
+
+                    <a
+                        href="/pages/hallticket.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▫
+                        </span>
+
+                        <span>
+                            Hall Ticket
+                        </span>
+
+                    </a>
+
+
+                    <!-- NOTICES -->
+
+                    <a
+                        href="/pages/notices.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            !
+                        </span>
+
+                        <span>
+                            Notices
+                        </span>
+
+                    </a>
+
+
+                    <!-- DOCUMENTS -->
+
+                    <a
+                        href="/pages/documents.html"
+                        class="academic-item"
+                    >
+
+                        <span class="academic-icon">
+                            ▫
+                        </span>
+
+                        <span>
+                            Documents
+                        </span>
+
+                    </a>
+
+                    <a href="#"
+               class="academic-item"
+               data-page="timetable">
+
+                <span class="academic-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="/pages/settings.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <!-- LOGOUT -->
+
+            <a
+                href="#"
+                id="logoutButton"
+                class="nav-item logout-item"
+            >
+
+                <span class="nav-icon">
+                    ↪
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </a>
+
+
+            <!-- STUDENT PROFILE -->
+
+            <div class="sidebar-profile">
+
+
+                <div
+                    class="profile-avatar"
+                    id="sidebarAvatar"
+                >
+                    S
+                </div>
+
+
+                <div class="profile-info">
+
+                    <!-- KEEPING ID FOR MARKS.JS -->
+
+                    <strong id="sidebarName">
+                        Student
+                    </strong>
+
+                    <span id="sidebarEnrollment">
+                        Student
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="profile-more"
+                >
+                    •••
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="top-header">
+
+
+            <div class="header-left">
+
+                <div>
+
+                    <div class="college-name">
+                        APEX INSTITUTE OF TECHNOLOGY
+                    </div>
+
+                    <h1>
+                        Marks
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <!-- NOTIFICATION -->
+
+                <button
+                    type="button"
+                    class="header-icon"
+                >
+                    ♧
+
+                    <span
+                        class="header-notification-dot"
+                    ></span>
+
+                </button>
+
+
+                <!-- PROFILE -->
+
+                <div class="header-profile">
+
+
+                    <div
+                        class="header-avatar"
+                        id="headerAvatar"
+                    >
+                        S
+                    </div>
+
+
+                    <div class="header-profile-info">
+
+                        <!-- KEEPING ID FOR MARKS.JS -->
+
+                        <strong id="headerName">
+                            Student
+                        </strong>
+
+                        <span id="headerEnrollment">
+                            Student
+                        </span>
+
+                    </div>
+
+
+                    <span class="dropdown-arrow">
+                        ▾
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =====================================
+             MARKS CONTENT
+        ====================================== -->
+
+        <section class="marks-content">
+
+
+            <!-- PAGE HEADING -->
+
+          <div class="marks-heading">
+
+    <div>
+
+        <div class="marks-label">
+            ACADEMICS
+        </div>
+
+        <h2>
+            Marks
+        </h2>
+
+        <p>
+            View your semester-wise academic performance.
+        </p>
+
+    </div>
+
+</div>
+
+                <!-- STUDENT INFO -->
+                 <!-- Hidden elements required by marks.js -->
+<div style="display: none;">
+
+    <span id="studentName"></span>
+
+    <span id="studentEnrollment"></span>
+
+    <span id="studentBranch"></span>
+
+    <span id="studentSection"></span>
+
+    <span id="studentAcademic"></span>
+
+    <span id="semesterDisplay"></span>
+
+</div>
+
+
+
+            <!-- =================================
+                 STUDENT OVERVIEW
+            ================================== -->
+
+          
+
+
+            <!-- =================================
+                 SEMESTER SELECTOR
+            ================================== -->
+
+            <div class="semester-selector-card">
+
+
+                <div>
+
+                    <h3>
+                        Semester
+                    </h3>
+
+                    <p id="semesterDescription">
+                        Select a semester to view your marks.
+                    </p>
+
+                </div>
+
+
+                <select id="semesterSelect">
+                </select>
+
+
+            </div>
+
+
+            <!-- =================================
+                 MARKS CARD
+            ================================== -->
+
+            <div class="marks-card">
+
+
+                <!-- MARKS HEADER -->
+
+                <div class="marks-card-header">
+
+                    <div>
+
+                        <h3>
+                            Semester Internal Marks
+                        </h3>
+
+                        <p>
+                            Internal assessment details for the selected semester.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     CURRENT SEMESTER MESSAGE
+                ================================== -->
+
+                <div
+                    id="currentSemesterMessage"
+                    class="current-semester-message hidden"
+                >
+
+
+                    <div class="message-icon">
+                        ⏳
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Marks Not Yet Updated
+                        </h3>
+
+                        <p>
+                            Marks for your current semester have not been
+                            updated yet.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================
+                     MARKS CONTENT
+                ================================== -->
+
+                <div id="marksContent">
+
+
+                    <!-- SUMMARY -->
+
+
+
+                    <!-- =================================
+                         THEORY SUBJECTS
+                    ================================== -->
+
+                    <div
+                        id="nonLabSection"
+                        class="marks-section hidden"
+                    >
+
+
+                        <div class="section-title">
+
+                            <div>
+
+                                <h3>
+                                    Theory Subjects
+                                </h3>
+
+                                <span>
+                                    Mid Term + Assignments
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-container">
+
+
+                            <table class="marks-table">
+
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Code
+                                        </th>
+
+                                        <th>
+                                            Subject
+                                        </th>
+
+                                        <th>
+                                            Mid Term
+                                            <br>
+                                            <small>/ 30</small>
+                                        </th>
+
+                                        <th>
+                                            Assignment 1
+                                            <br>
+                                            <small>/ 15</small>
+                                        </th>
+
+                                        <th>
+                                            Assignment 2
+                                            <br>
+                                            <small>/ 15</small>
+                                        </th>
+
+                                        <th>
+                                            Total
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="nonLabTableBody">
+                                </tbody>
+
+
+                            </table>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- =================================
+                         LAB SUBJECTS
+                    ================================== -->
+
+                    <div
+                        id="labSection"
+                        class="marks-section hidden"
+                    >
+
+
+                        <div class="section-title">
+
+                            <div>
+
+                                <h3>
+                                    Laboratory Subjects
+                                </h3>
+
+                                <span>
+                                    Mid Term + Lab Internal
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-container">
+
+
+                            <table class="marks-table">
+
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Code
+                                        </th>
+
+                                        <th>
+                                            Subject
+                                        </th>
+
+                                        <th>
+                                            Mid Term
+                                            <br>
+                                            <small>/ 30</small>
+                                        </th>
+
+                                        <th>
+                                            Lab Internal
+                                            <br>
+                                            <small>/ 30</small>
+                                        </th>
+
+                                        <th>
+                                            Total
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="labTableBody">
+                                </tbody>
+
+
+                            </table>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================
+                     NO MARKS
+                ================================== -->
+
+                <div
+                    id="noMarks"
+                    class="no-marks hidden"
+                >
+
+                    <div class="no-marks-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        No Marks Available
+                    </h3>
+
+                    <p>
+                        Marks for this semester have not been updated yet.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="/js/global.js"></script>
+
+<script src="/js/marks.js?v=4"></script>
+
+
+</body>
+
+</html>

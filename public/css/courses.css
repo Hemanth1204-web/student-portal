@@ -1,0 +1,567 @@
+/* =========================================
+   APEX STUDENT PORTAL
+   MY COURSES PAGE
+========================================= */
+
+
+/* =========================================
+   PAGE CONTENT
+========================================= */
+
+.courses-content {
+
+    padding: 30px 35px 45px;
+
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.courses-heading {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+}
+
+
+.courses-label {
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.courses-heading h2 {
+
+    margin: 0 0 6px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+}
+
+
+.courses-heading p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   STUDENT INFO
+========================================= */
+
+.student-info-box {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 13px 18px;
+
+    min-width: 205px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+.student-info-box strong {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.student-info-box span {
+
+    margin-top: 4px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   COURSE OVERVIEW
+========================================= */
+
+.course-overview {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.overview-item {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 17px 19px;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+.overview-item span {
+
+    display: block;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.overview-item strong {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   SEMESTER SELECTOR
+========================================= */
+
+.semester-selector-card {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 18px 20px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+.semester-selector-card h3 {
+
+    margin: 0 0 4px;
+
+    font-size: 14px;
+
+}
+
+
+.semester-selector-card p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+#semesterSelect {
+
+    min-width: 145px;
+
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: var(--white);
+
+    color: var(--text-primary);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    outline: none;
+
+    cursor: pointer;
+
+}
+
+
+#semesterSelect:focus {
+
+    border-color: var(--primary);
+
+}
+
+
+/* =========================================
+   COURSES CARD
+========================================= */
+
+.courses-card {
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+.courses-card-header {
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.courses-card-header h3 {
+
+    margin: 0 0 4px;
+
+    font-size: 17px;
+
+}
+
+
+.courses-card-header p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   COURSE LIST
+========================================= */
+
+.course-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* =========================================
+   COURSE ITEM
+========================================= */
+
+.course-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 16px 24px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition: background 0.2s ease;
+
+}
+
+
+.course-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.course-item:hover {
+
+    background: #fafbff;
+
+}
+
+
+/* =========================================
+   COURSE NUMBER
+========================================= */
+
+.course-number {
+
+    width: 34px;
+
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================
+   COURSE INFORMATION
+========================================= */
+
+.course-info {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.course-name {
+
+    margin: 0 0 4px;
+
+    color: var(--text-primary);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.course-code {
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+
+}
+.course-faculty {
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   COURSE TYPE
+========================================= */
+
+.course-type {
+
+    padding: 6px 10px;
+
+    border-radius: 15px;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   NO COURSES
+========================================= */
+
+.no-courses {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+}
+
+
+.no-courses-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.no-courses h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 15px;
+
+}
+
+
+.no-courses p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .course-overview {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .courses-content {
+
+        padding: 22px 18px 35px;
+
+    }
+
+
+    .courses-heading {
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+
+    .student-info-box {
+
+        align-items: flex-start;
+
+    }
+
+
+    .course-overview {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .semester-selector-card {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    #semesterSelect {
+
+        width: 100%;
+
+    }
+
+
+    .course-item {
+
+        padding: 14px 16px;
+
+    }
+
+
+    .course-type {
+
+        display: none;
+
+    }
+
+}

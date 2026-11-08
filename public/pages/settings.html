@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Apex Student Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/settings.css">
+</head>
+<body>
+
+<div class="portal-layout">
+
+    <!-- SIDEBAR: MATCHES MARKS PAGE -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>APEX</h2>
+                <span>STUDENT PORTAL</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <div class="menu-title">MAIN MENU</div>
+
+            <a href="/pages/dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/pages/profile.html" class="nav-item">
+                <span class="nav-icon">○</span>
+                <span>My Profile</span>
+            </a>
+
+            <div class="academics-wrapper">
+
+                <button type="button" class="academics-toggle"
+                        id="academicsToggle" aria-expanded="true">
+                    <span class="academics-title-left">
+                        <span class="nav-icon">▣</span>
+                        <span>Academics</span>
+                    </span>
+                    <span id="academicsArrow" class="academics-arrow">▾</span>
+                </button>
+
+                <div id="academicsSubmenu" class="academics-submenu show">
+
+                    <a href="/pages/attendance.html" class="academic-item">
+                        <span class="academic-icon">▣</span>
+                        <span>Attendance</span>
+                    </a>
+
+                    <a href="/pages/courses.html" class="academic-item">
+                        <span class="academic-icon">▤</span>
+                        <span>My Courses</span>
+                    </a>
+
+                    <a href="/pages/marks.html" class="academic-item">
+                        <span class="academic-icon">◈</span>
+                        <span>Marks</span>
+                    </a>
+
+                    <a href="/pages/grade-list.html" class="academic-item">
+                        <span class="academic-icon">★</span>
+                        <span>Grade List</span>
+                    </a>
+
+                    <a href="/pages/fees.html" class="academic-item">
+                        <span class="academic-icon">₹</span>
+                        <span>Fees</span>
+                    </a>
+
+                    <a href="/pages/hallticket.html" class="academic-item">
+                        <span class="academic-icon">▫</span>
+                        <span>Hall Ticket</span>
+                    </a>
+
+                    <a href="/pages/notices.html" class="academic-item">
+                        <span class="academic-icon">!</span>
+                        <span>Notices</span>
+                    </a>
+
+                    <a href="/pages/documents.html" class="academic-item">
+                        <span class="academic-icon">▫</span>
+                        <span>Documents</span>
+                    </a>
+
+                    <a href="/pages/timetable.html" class="academic-item">
+                        <span class="academic-icon">▦</span>
+                        <span>Timetable</span>
+                    </a>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- SIDEBAR BOTTOM: MATCHES MARKS PAGE -->
+        <div class="sidebar-bottom">
+
+            <a href="/pages/settings.html" class="nav-item active">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" id="logoutButton" class="nav-item logout-item">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+
+            <div class="sidebar-profile">
+                <div class="profile-avatar" id="sidebarAvatar">S</div>
+                <div class="profile-info">
+                    <strong id="sidebarName">Student</strong>
+                    <span id="sidebarEnrollment">Student</span>
+                </div>
+                <button type="button" class="profile-more" aria-label="Profile options">
+                    •••
+                </button>
+            </div>
+
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER: MATCHES MARKS PAGE -->
+        <header class="top-header">
+
+            <div class="header-left">
+                <div>
+                    <div class="college-name">APEX INSTITUTE OF TECHNOLOGY</div>
+                    <h1>Settings</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+
+                <button type="button" class="header-icon"
+                        aria-label="Notifications">
+                    ♧
+                    <span class="header-notification-dot"></span>
+                </button>
+
+                <div class="header-profile">
+                    <div class="header-avatar" id="headerAvatar">S</div>
+                    <div class="header-profile-info">
+                        <strong id="headerName">Student</strong>
+                        <span id="headerEnrollment">Student</span>
+                    </div>
+                    <span class="dropdown-arrow">▾</span>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- SETTINGS CONTENT -->
+        <section class="settings-content">
+
+            <div class="settings-heading">
+                <div>
+                    <div class="settings-label">ACCOUNT</div>
+                    <h2>Settings</h2>
+                    <p>Manage your account, security and appearance.</p>
+                </div>
+            </div>
+
+            <div class="settings-layout">
+
+                <!-- SETTINGS MENU -->
+                <div class="settings-options">
+
+                    <button type="button"
+                            class="settings-option selected"
+                            data-panel="photoPanel">
+                        <span class="option-icon">▣</span>
+                        <span class="option-text">
+                            <strong>Profile Photo</strong>
+                            <small>Update your profile picture</small>
+                        </span>
+                        <span class="option-arrow">›</span>
+                    </button>
+
+                    <button type="button"
+                            class="settings-option"
+                            data-panel="passwordPanel">
+                        <span class="option-icon">♙</span>
+                        <span class="option-text">
+                            <strong>Change Password</strong>
+                            <small>Secure your account using OTP</small>
+                        </span>
+                        <span class="option-arrow">›</span>
+                    </button>
+
+                    <button type="button"
+                            class="settings-option"
+                            data-panel="themePanel">
+                        <span class="option-icon">◐</span>
+                        <span class="option-text">
+                            <strong>Appearance</strong>
+                            <small>Dark, light or system theme</small>
+                        </span>
+                        <span class="option-arrow">›</span>
+                    </button>
+
+                </div>
+
+                <!-- SETTINGS DETAILS -->
+                <div class="settings-detail">
+
+                    <!-- PROFILE PHOTO -->
+                    <section class="settings-panel active" id="photoPanel">
+                        <div class="settings-card-header">
+                            <h3>Profile Photo</h3>
+                            <p>Choose a clear picture for your student profile.</p>
+                        </div>
+
+                        <div class="photo-preview-area">
+                            <div class="photo-preview" id="photoPreview">S</div>
+                            <div>
+                                <strong id="photoStudentName">Student</strong>
+                                <p>JPG, JPEG or PNG · Maximum 5 MB</p>
+                            </div>
+                        </div>
+
+                        <form id="photoForm">
+                            <label class="field-label" for="profilePhoto">
+                                Select a photo
+                            </label>
+                            <input type="file" id="profilePhoto"
+                                   accept=".jpg,.jpeg,.png,image/jpeg,image/png">
+
+                            <p class="field-help">
+                                Only JPEG and PNG images up to 5 MB are accepted.
+                            </p>
+
+                            <button type="submit" class="primary-button"
+                                    id="uploadPhotoBtn">
+                                Upload Photo
+                            </button>
+                        </form>
+
+                        <div class="settings-message" id="photoMessage"
+                             role="status" aria-live="polite"></div>
+                    </section>
+
+                    <!-- CHANGE PASSWORD -->
+                    <section class="settings-panel" id="passwordPanel">
+                        <div class="settings-card-header">
+                            <h3>Change Password</h3>
+                            <p>Verify your identity with an OTP before changing your password.</p>
+                        </div>
+
+                        <div class="security-note">
+                            <strong>Account security</strong>
+                            <p>Never share your OTP with anyone.</p>
+                        </div>
+
+                        <form id="otpRequestForm">
+                            <label class="field-label" for="otpEmail">
+                                Registered email address
+                            </label>
+                            <input type="email" id="otpEmail"
+                                   placeholder="Enter your registered email"
+                                   autocomplete="email" required>
+
+                            <button type="submit" class="primary-button"
+                                    id="requestOtpBtn">
+                                Request OTP
+                            </button>
+                        </form>
+
+                        <div class="settings-message" id="otpRequestMessage"
+                             role="status" aria-live="polite"></div>
+
+                        <div class="otp-section" id="otpSection" hidden>
+                            <form id="changePasswordForm">
+                                <label class="field-label" for="otpCode">
+                                    One-time password (OTP)
+                                </label>
+                                <input type="text" id="otpCode"
+                                       inputmode="numeric"
+                                       autocomplete="one-time-code"
+                                       pattern="[0-9]{6}" maxlength="6"
+                                       placeholder="Enter 6-digit OTP" required>
+
+                                <label class="field-label" for="newPassword">
+                                    New password
+                                </label>
+                                <input type="password" id="newPassword"
+                                       autocomplete="new-password"
+                                       minlength="8"
+                                       placeholder="Minimum 8 characters" required>
+
+                                <label class="field-label" for="confirmPassword">
+                                    Confirm new password
+                                </label>
+                                <input type="password" id="confirmPassword"
+                                       autocomplete="new-password"
+                                       minlength="8"
+                                       placeholder="Re-enter new password" required>
+
+                                <button type="submit" class="primary-button"
+                                        id="changePasswordBtn">
+                                    Verify OTP &amp; Change Password
+                                </button>
+                            </form>
+
+                            <div class="settings-message" id="passwordMessage"
+                                 role="status" aria-live="polite"></div>
+                        </div>
+                    </section>
+
+                    <!-- APPEARANCE -->
+                    <section class="settings-panel" id="themePanel">
+                        <div class="settings-card-header">
+                            <h3>Appearance</h3>
+                            <p>Select how you want the portal to look.</p>
+                        </div>
+
+                        <div class="theme-options">
+
+                            <label class="theme-choice">
+                                <input type="radio" name="theme" value="light">
+                                <span class="theme-swatch light-swatch">☀</span>
+                                <span>
+                                    <strong>Light</strong>
+                                    <small>Bright background</small>
+                                </span>
+                            </label>
+
+                            <label class="theme-choice">
+                                <input type="radio" name="theme" value="dark">
+                                <span class="theme-swatch dark-swatch">☾</span>
+                                <span>
+                                    <strong>Dark</strong>
+                                    <small>Dark background</small>
+                                </span>
+                            </label>
+
+                            <label class="theme-choice">
+                                <input type="radio" name="theme" value="system">
+                                <span class="theme-swatch system-swatch">◐</span>
+                                <span>
+                                    <strong>System</strong>
+                                    <small>Follow your device settings</small>
+                                </span>
+                            </label>
+
+                        </div>
+
+                        <div class="settings-message" id="themeMessage"
+                             role="status" aria-live="polite"></div>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="/js/global.js"></script>
+<script src="/js/settings.js"></script>
+</body>
+</html>

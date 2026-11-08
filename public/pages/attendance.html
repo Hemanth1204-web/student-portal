@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance | Apex Student Portal</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+
+    <link rel="stylesheet" href="/css/attendance.css">
+
+</head>
+
+
+<body>
+
+
+<div class="portal-layout">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+    <!-- BRAND -->
+    <div class="brand">
+
+        <div class="brand-logo">
+            A
+        </div>
+
+        <div class="brand-text">
+            <h2>APEX</h2>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="sidebar-nav">
+
+        <p class="menu-title">
+            MAIN MENU
+        </p>
+
+
+        <!-- DASHBOARD -->
+        <a href="/pages/dashboard.html"
+           class="nav-item">
+
+            <span class="nav-icon">⌂</span>
+
+            <span>Dashboard</span>
+
+        </a>
+
+
+        <!-- MY PROFILE -->
+        <a href="/pages/profile.html"
+           class="nav-item">
+
+            <span class="nav-icon">○</span>
+
+            <span>My Profile</span>
+
+        </a>
+
+
+        <!-- ACADEMICS -->
+        <button
+            type="button"
+            class="academics-toggle"
+            id="academicsToggle">
+
+            <span class="academics-title-left">
+
+                <span class="nav-icon">▣</span>
+
+                <span>Academics</span>
+
+            </span>
+
+            <span
+                class="academics-arrow"
+                id="academicsArrow">
+                ▾
+            </span>
+
+        </button>
+
+
+        <!-- ACADEMICS SUBMENU -->
+        <div
+            class="academics-submenu"
+            id="academicsSubmenu">
+
+            <a href="/pages/attendance.html"
+               class="academic-item active">
+
+                <span class="academic-icon">▣</span>
+
+                <span>Attendance</span>
+
+            </a>
+
+
+            <a href="/pages/courses.html"
+               class="academic-item">
+
+                <span class="academic-icon">▤</span>
+
+                <span>My Courses</span>
+
+            </a>
+
+
+            <a href="/pages/marks.html"
+               class="academic-item">
+
+                <span class="academic-icon">✎</span>
+
+                <span>Marks</span>
+
+            </a>
+            
+<a href="/pages/grade-list.html"
+   class="academic-item"
+   data-page="grade-list">
+    <span class="academic-icon">★</span>
+    <span>Grade List</span>
+</a>
+
+
+
+            <a href="/pages/fees.html"
+               class="academic-item">
+
+                <span class="academic-icon">₹</span>
+
+                <span>Fees</span>
+
+            </a>
+
+
+            <a href="/pages/hallticket.html"
+               class="academic-item">
+
+                <span class="academic-icon">□</span>
+
+                <span>Hall Ticket</span>
+
+            </a>
+
+
+            <a href="/pages/notices.html"
+               class="academic-item">
+
+                <span class="academic-icon">!</span>
+
+                <span>Notices</span>
+
+            </a>
+
+
+            <a href="/pages/documents.html"
+               class="academic-item">
+
+                <span class="academic-icon">□</span>
+
+                <span>Documents</span>
+
+            </a>
+
+            <a href="/pages/timetable.html"
+               class="academic-item"
+               data-page="timetable">
+
+                <span class="academic-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+
+        </div>
+
+    </nav>
+
+
+    <!-- SIDEBAR BOTTOM -->
+    <div class="sidebar-bottom">
+
+        <a href="/pages/settings.html"
+           class="nav-item">
+
+            <span class="nav-icon">⚙</span>
+
+            <span>Settings</span>
+
+        </a>
+
+
+        <a href="#"
+           class="nav-item logout-item"
+           id="logoutButton">
+
+            <span class="nav-icon">↪</span>
+
+            <span>Logout</span>
+
+        </a>
+
+
+        <!-- STUDENT PROFILE -->
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">
+                <span id="sidebarAvatar">A</span>
+            </div>
+
+            <div class="profile-info">
+
+                <strong id="sidebarStudentName">
+                    Student
+                </strong>
+
+                <span>Student</span>
+
+            </div>
+
+            <button
+                type="button"
+                class="profile-more">
+                •••
+            </button>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+
+          <div class="header-left">
+
+    <div>
+
+        <div class="college-name">
+            APEX INSTITUTE OF TECHNOLOGY
+        </div>
+
+        <h1>
+            Attendance
+        </h1>
+
+    </div>
+
+</div>
+
+
+            <div class="header-left">
+
+
+                <div class="header-right">
+                    ♧
+                </div>
+
+
+                <div class="header-avatar">
+                    <span id="avatarLetter">A</span>
+                </div>
+
+
+                <div class="header-profile-info">
+
+                    <strong id="headerStudentName">
+                        Student
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+
+                <span class="profile-arrow">
+                    ▾
+                </span>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =========================================
+             PAGE CONTENT
+        ========================================== -->
+
+        <section class="attendance-content">
+
+
+            <!-- PAGE HEADING -->
+
+            <div class="page-heading">
+
+                <div>
+
+                    <span class="page-label">
+                        ACADEMICS
+                    </span>
+
+                    <h2>
+                        Attendance Overview
+                    </h2>
+
+                    <p>
+                        Track your subject-wise attendance
+                        and academic attendance status.
+                    </p>
+
+                </div>
+
+
+                <div class="student-info-box">
+
+                    <strong id="studentEnrollment">
+                        --
+                    </strong>
+
+                    <span id="studentAcademic">
+                        --
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 SUMMARY CARDS
+            ====================================== -->
+
+            <div class="attendance-summary">
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon percentage">
+                        %
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Overall Attendance
+                        </span>
+
+                        <strong id="overallAttendance">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon classes">
+                        #
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Classes Held
+                        </span>
+
+                        <strong id="totalClasses">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon attended">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Classes Attended
+                        </span>
+
+                        <strong id="classesAttended">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon subjects">
+                        #
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Subjects
+                        </span>
+
+                        <strong id="subjectCount">
+                            --
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =====================================
+                 ATTENDANCE TABLE
+            ====================================== -->
+
+            <div class="attendance-card">
+
+
+               <div class="card-header">
+    <div>
+        <h3>
+            Subject-wise Attendance
+        </h3>
+
+        <p id="semesterDescription">
+            Attendance records for your selected semester
+        </p>
+    </div>
+
+    <!-- SEMESTER DROPDOWN -->
+    <div class="semester-selector">
+        <label for="semesterSelect">Semester</label>
+
+        <select id="semesterSelect">
+            <!-- Options added by attendance.js -->
+        </select>
+    </div>
+</div>
+
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    Subject
+                                </th>
+
+                                <th>
+                                    Code
+                                </th>
+
+                                <th>
+                                    Classes Held
+                                </th>
+
+                                <th>
+                                    Attended
+                                </th>
+
+                                <th>
+                                    Attendance
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="attendanceTableBody">
+
+                            <tr>
+
+                                <td colspan="7"
+                                    class="loading">
+                                    Loading attendance...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+<script src="/js/global.js"></script>
+<script src="/js/attendance.js"></script>
+
+</body>
+
+</html>

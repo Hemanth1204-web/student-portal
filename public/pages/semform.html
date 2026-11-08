@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semester Registration Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px;
+            background: #f0f2f7;
+            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .registration-page {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .form-toolbar {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .form-toolbar a,
+        .form-toolbar button {
+            padding: 11px 16px;
+            border: 0;
+            border-radius: 6px;
+            background: #4653c6;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .registration-form {
+            padding: 35px;
+            background: white;
+            border: 1px solid #cfd3db;
+        }
+
+        .form-instruction {
+            margin: 0 0 16px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .preferred-section {
+            padding: 14px;
+            border: 1px solid #444;
+            margin-bottom: 20px;
+        }
+
+        .preferred-section label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .preferred-section input {
+            width: 150px;
+            padding: 5px;
+            border: 0;
+            border-bottom: 1px solid #777;
+            font-size: 13px;
+        }
+
+        .section-note {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .college-heading {
+            text-align: center;
+            padding: 20px 10px;
+            border: 1px solid #444;
+            border-bottom: 0;
+        }
+
+        .college-heading h1 {
+            margin: 0 0 8px;
+            font-size: 19px;
+        }
+
+        .college-heading p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .college-heading hr {
+            margin-top: 18px;
+            border: 0;
+            border-top: 1px solid #555;
+        }
+
+        .student-fields {
+            padding: 22px;
+            border: 1px solid #444;
+            border-top: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px 25px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .field.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .field input,
+        .field select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 2px;
+            background: white;
+            font-size: 13px;
+        }
+
+        .fee-title {
+            padding: 12px;
+            border: 1px solid #444;
+            border-bottom: 0;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        .fee-table th,
+        .fee-table td {
+            padding: 9px 4px;
+            border: 1px solid #555;
+            text-align: center;
+            overflow-wrap: anywhere;
+            font-size: 10px;
+        }
+
+        .fee-table th {
+            background: #f6f6f6;
+        }
+
+        .fee-table input {
+            width: 100%;
+            min-width: 0;
+            padding: 5px 1px;
+            border: 0;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        .signature-area {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            min-height: 105px;
+            align-items: flex-end;
+            padding: 18px;
+            border: 1px solid #444;
+            border-top: 0;
+        }
+
+        .signature-box {
+            width: 45%;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .signature-line {
+            height: 42px;
+            border-bottom: 1px solid #777;
+            margin-bottom: 8px;
+        }
+
+        .registration-footer {
+            margin-top: 16px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        @media (max-width: 650px) {
+            body {
+                padding: 10px;
+            }
+
+            .registration-form {
+                padding: 15px;
+            }
+
+            .student-fields {
+                padding: 14px;
+                grid-template-columns: 1fr;
+            }
+
+            .field.full-width {
+                grid-column: auto;
+            }
+
+            .fee-table th,
+            .fee-table td {
+                padding: 5px 2px;
+                font-size: 8px;
+            }
+
+            .college-heading h1 {
+                font-size: 16px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 10mm;
+            }
+
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .registration-page {
+                max-width: none;
+            }
+
+            .form-toolbar {
+                display: none;
+            }
+
+            .registration-form {
+                padding: 10px;
+                border: 0;
+            }
+
+            .field input,
+            .field select,
+            .preferred-section input,
+            .fee-table input {
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-page">
+
+    <div class="form-toolbar">
+        <a href="/pages/documents.html">← Back to Documents</a>
+        <button type="button" onclick="window.print()">
+            Print / Save as PDF
+        </button>
+    </div>
+
+    <form class="registration-form" id="registrationForm">
+
+        <p class="form-instruction">Form to be filled in by Student</p>
+
+        <div class="preferred-section">
+            <label>
+                PREFERRED SECTION:
+                <input type="text" name="preferred_section"
+                       maxlength="2" placeholder="A / B / C / D">
+            </label>
+            <p class="section-note">
+                NOTE: Section cannot be changed once registered.
+            </p>
+        </div>
+
+        <div class="college-heading">
+            <h1>APEX INSTITUTE OF TECHNOLOGY</h1>
+            <p>(Deemed-to-be-University under Section 3 of the UGC Act 1956)</p>
+            <hr>
+        </div>
+
+        <div class="student-fields">
+
+            <div class="field">
+                <label for="program">Program</label>
+                <input id="program" name="program"
+                       placeholder="Enter program" required>
+            </div>
+
+            <div class="field">
+                <label for="batch">Batch</label>
+                <input id="batch" name="batch"
+                       placeholder="e.g. 2024-2028" required>
+            </div>
+
+            <div class="field">
+                <label for="applicationNo">Application No.</label>
+                <input id="applicationNo" name="application_no">
+            </div>
+
+            <div class="field">
+                <label for="enrollmentNo">Enroll No.</label>
+                <input id="enrollmentNo" name="enrollment_no" required>
+            </div>
+
+            <div class="field full-width">
+                <label for="studentName">Name of the Student</label>
+                <input id="studentName" name="student_name" required>
+            </div>
+
+            <div class="field">
+                <label for="semester">Semester</label>
+                <select id="semester" name="semester" required>
+                    <option value="">Select semester</option>
+                    <option>Semester 1</option>
+                    <option>Semester 2</option>
+                    <option>Semester 3</option>
+                    <option>Semester 4</option>
+                    <option>Semester 5</option>
+                    <option>Semester 6</option>
+                    <option>Semester 7</option>
+                    <option>Semester 8</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="fee-title">Fee payment details (Rs.) as applicable</div>
+
+        <table class="fee-table">
+            <thead>
+                <tr>
+                    <th>Admission Fee</th>
+                    <th>Caution Deposit</th>
+                    <th>Security Deposit</th>
+                    <th>Semester Fee</th>
+                    <th>Hostel Fee</th>
+                    <th>Mess Deposit</th>
+                    <th>Bus Fee</th>
+                    <th>Total Fee Paid</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><input type="number" min="0" step="0.01" name="admission_fee" aria-label="Admission fee"></td>
+                    <td><input type="number" min="0" step="0.01" name="caution_deposit" aria-label="Caution deposit"></td>
+                    <td><input type="number" min="0" step="0.01" name="security_deposit" aria-label="Security deposit"></td>
+                    <td><input type="number" min="0" step="0.01" name="semester_fee" aria-label="Semester fee"></td>
+                    <td><input type="number" min="0" step="0.01" name="hostel_fee" aria-label="Hostel fee"></td>
+                    <td><input type="number" min="0" step="0.01" name="mess_deposit" aria-label="Mess deposit"></td>
+                    <td><input type="number" min="0" step="0.01" name="bus_fee" aria-label="Bus fee"></td>
+                    <td><input type="number" min="0" step="0.01" name="total_fee_paid" aria-label="Total fee paid"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="signature-area">
+            <div class="signature-box">
+                <div class="signature-line"></div>
+                Signature of the Student
+            </div>
+
+            <div class="signature-box">
+                <div class="signature-line"></div>
+                Accounts
+            </div>
+        </div>
+
+        <p class="registration-footer">
+            Please verify all details before submitting the completed form.
+        </p>
+
+    </form>
+</div>
+
+<script>
+    // Prefill student details when the student is logged in.
+    try {
+        const student = JSON.parse(
+            sessionStorage.getItem("student") || "null"
+        );
+
+        if (student) {
+            const name = [
+                student.first_name,
+                student.last_name
+            ].filter(Boolean).join(" ") || student.name || "";
+
+            const enrollment =
+                student.enrollment_number ||
+                student.enrollment ||
+                "";
+
+            const batch = student.batch || student.batch_year || "";
+
+            document.getElementById("studentName").value = name;
+            document.getElementById("enrollmentNo").value = enrollment;
+            document.getElementById("batch").value = batch;
+            document.getElementById("program").value =
+                student.course || student.branch || "";
+        }
+    } catch (error) {
+        console.error("Could not prefill student details.", error);
+    }
+</script>
+
+</body>
+</html>

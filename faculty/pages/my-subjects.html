@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Subjects | Apex Faculty Portal</title>
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/faculty/css/my-subjects.css">
+</head>
+<body>
+    <div class="portal">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-logo">A</div>
+                <div class="brand-text">
+                    <h2>Apex</h2>
+                    <p>Faculty Portal</p>
+                </div>
+            </div>
+
+            <p class="menu-heading">MAIN MENU</p>
+
+            <nav class="navigation">
+                <a href="/faculty/pages/faculty-dashboard.html" class="nav-link">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="/faculty/pages/my-subjects.html" class="nav-link active">
+                    <span>▤</span> My Subjects
+                </a>
+                <a href="/faculty/pages/my-students.html" class="nav-link">
+                    <span>♙</span> My Students
+                </a>
+                <a href="/faculty/pages/attendance.html" class="nav-link">
+                    <span>✓</span> Attendance
+                </a>
+                <a href="/faculty/pages/marks.html" class="nav-link">
+                    <span>▧</span> Marks Management
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="/faculty/pages/profile.html" class="nav-link" id="profileLink">
+                    <span>⚙</span> Profile
+                </a>
+                 <a href="/faculty/pages/settings.html" class="nav-link">
+    <span>⚙</span> Settings</a>
+                <button type="button" class="logout-btn" id="logoutBtn">
+                    <span>↪</span> Logout
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="breadcrumb">Faculty / My Subjects</p>
+                    <h1>My Subjects</h1>
+                    <p class="page-description">
+                        View the subjects and sections assigned to you.
+                    </p>
+                </div>
+
+                <div class="profile-summary">
+                    <div class="avatar" id="avatar">F</div>
+                    <div>
+                        <strong id="facultyName">Loading...</strong>
+                        <p id="facultyId">Faculty ID</p>
+                    </div>
+                </div>
+            </header>
+
+            <section class="welcome-banner">
+                <div>
+                    <p class="eyebrow">TEACHING ASSIGNMENTS</p>
+                    <h2>Your Assigned Subjects</h2>
+                    <p>
+                        All assignments below are loaded from the
+                        college courses database.
+                    </p>
+                </div>
+                <div class="welcome-icon">📚</div>
+            </section>
+
+            <section class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-icon purple">▤</div>
+                    <div>
+                        <p>Unique Subjects</p>
+                        <h3 id="subjectCount">—</h3>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon blue">▣</div>
+                    <div>
+                        <p>Teaching Assignments</p>
+                        <h3 id="assignmentCount">—</h3>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon green">◫</div>
+                    <div>
+                        <p>Sections</p>
+                        <h3 id="sectionCount">—</h3>
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-card">
+
+                <div class="card-heading">
+                    <div>
+                        <h2>Subject Assignments</h2>
+                        <p id="resultCount">Loading your assignments...</p>
+                    </div>
+
+                    <button type="button" id="refreshBtn" class="refresh-btn">
+                        ↻ Refresh
+                    </button>
+                </div>
+
+                <div class="filters">
+                    <div class="search-box">
+                        <label for="subjectSearch">Search subjects</label>
+                        <input
+                            type="search"
+                            id="subjectSearch"
+                            placeholder="Search by name or course code..."
+                        >
+                    </div>
+
+                    <div class="filter-box">
+                        <label for="semesterFilter">Semester</label>
+                        <select id="semesterFilter">
+                            <option value="">All Semesters</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6">Semester 6</option>
+                            <option value="7">Semester 7</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-box">
+                        <label for="sectionFilter">Section</label>
+                        <select id="sectionFilter">
+                            <option value="">All Sections</option>
+                            <option value="A">Section A</option>
+                            <option value="B">Section B</option>
+                            <option value="C">Section C</option>
+                            <option value="D">Section D</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p id="statusMessage" class="status-message">
+                    Loading assignments...
+                </p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Course Code</th>
+                                <th>Subject Name</th>
+                                <th>Year</th>
+                                <th>Semester</th>
+                                <th>Section</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subjectsTable">
+                            <tr>
+                                <td colspan="6">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="empty-state" id="emptyState" hidden>
+                    <div>📚</div>
+                    <h3>No subjects found</h3>
+                    <p>Try changing your search or filter options.</p>
+                    <button type="button" id="clearFiltersBtn">
+                        Clear Filters
+                    </button>
+                </div>
+
+            </section>
+
+            <p id="errorMessage" class="error-message" role="alert"></p>
+
+            <footer class="footer">
+                © 2026 Apex Institute of Technology · Faculty Portal
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="/faculty/js/my-subjects.js"></script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apex Institute of Technology | Student Portal</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <!-- College Branding -->
+        <div class="brand">
+
+            <div class="brand-logo">
+                A
+            </div>
+
+            <div class="brand-text">
+                <h2>APEX</h2>
+                <span>STUDENT PORTAL</span>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+
+          <p class="menu-title">MAIN MENU</p>
+
+<a href="/pages/dashboard.html"
+   class="nav-item active"
+   data-page="dashboard">
+    <span class="nav-icon">⌂</span>
+    <span>Dashboard</span>
+</a>
+
+<a href="/pages/profile.html"
+   class="nav-item"
+   data-page="profile">
+    <span class="nav-icon">◯</span>
+    <span>My Profile</span>
+</a>
+
+<button
+    type="button"
+    class="academics-toggle"
+    id="academicsToggle">
+
+    <span class="academics-title-left">
+        <span class="nav-icon">▣</span>
+        <span>Academics</span>
+    </span>
+
+    <span class="academics-arrow"
+          id="academicsArrow">
+        ▾
+    </span>
+
+</button>
+
+
+<div class="academics-submenu"
+     id="academicsSubmenu">
+
+    <a href="/pages/attendance.html"
+       class="academic-item"
+       data-page="attendance">
+        <span class="academic-icon">▣</span>
+        <span>Attendance</span>
+    </a>
+
+    <a href="/pages/courses.html"
+       class="academic-item"
+       data-page="courses">
+        <span class="academic-icon">▤</span>
+        <span>My Courses</span>
+    </a>
+
+    <a href="/pages/marks.html"
+       class="academic-item"
+       data-page="marks">
+        <span class="academic-icon">✎</span>
+        <span>Marks</span>
+    </a>
+
+    
+<a href="/pages/grade-list.html"
+   class="academic-item"
+   data-page="grade-list">
+    <span class="academic-icon">★</span>
+    <span>Grade List</span>
+</a>
+
+
+    <a href="/pages/fees.html"
+       class="academic-item"
+       data-page="fees">
+        <span class="academic-icon">₹</span>
+        <span>Fees</span>
+    </a>
+
+    <a href="/pages/notices.html"
+       class="academic-item"
+       data-page="hall-ticket">
+        <span class="academic-icon">▭</span>
+        <span>Hall Ticket</span>
+    </a>
+
+    <a href="/pages/notices.html"
+       class="academic-item"
+       data-page="notices">
+        <span class="academic-icon">!</span>
+        <span>Notices</span>
+    </a>
+
+    <a href="/pages/documents.html"
+       class="academic-item"
+       data-page="documents">
+        <span class="academic-icon">□</span>
+        <span>Documents</span>
+    </a>
+
+    <a href="/pages/timetable.html"
+               class="academic-item"
+               data-page="timetable">
+
+                <span class="academic-icon">▦</span>
+
+                <span>Timetable</span>
+
+            </a>
+
+
+   
+
+</div>
+
+
+        <!-- Bottom Menu -->
+        <div class="sidebar-bottom">
+
+            <a href="/pages/settings.html" class="nav-item" data-page="settings">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" class="nav-item logout-item">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+
+        <!-- Student Mini Profile -->
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">
+                H
+            </div>
+
+            <div class="profile-info">
+               <strong id="sidebarStudentName">Hemanth</strong>
+                <span>Student</span>
+            </div>
+
+            <button class="profile-more">•••</button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button class="mobile-menu" id="mobileMenu">
+                    ☰
+                </button>
+
+                <div>
+                    <p class="college-name">
+                        APEX INSTITUTE OF TECHNOLOGY
+                    </p>
+
+                    <h1>Student Portal</h1>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <!-- Notification -->
+                <button class="header-icon notification-button">
+                    ♧
+                    <span class="header-notification-dot"></span>
+                </button>
+
+
+                <!-- Student -->
+                <div class="header-profile">
+
+                    <div class="header-avatar">
+                        H
+                    </div>
+
+                    <div class="header-profile-info">
+                        <strong id="headerStudentName">Hemanth</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <span class="dropdown-arrow">
+                        ▼
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+      
+<section class="dashboard-page">
+    <div class="welcome-section">
+        <div>
+            <p class="welcome-small">Welcome back 👋</p>
+
+            <h2 id="welcomeStudentName">
+                Welcome, Student!
+            </h2>
+
+            
+        </div>
+
+        <div class="current-date">
+            <span>Today</span>
+            <strong id="currentDate">Loading...</strong>
+        </div>
+    </div>
+</section>
+
+
+    </main>
+
+
+    <!-- Dashboard JS -->
+    <script src="/js/dashboard.js"></script>
+
+   <script>
+const testToggle = document.getElementById("academicsToggle");
+const testSubmenu = document.getElementById("academicsSubmenu");
+
+testToggle.addEventListener("click", function () {
+    console.log("Classes:", testSubmenu.className);
+    console.log("Max height:", getComputedStyle(testSubmenu).maxHeight);
+    console.log("Actual height:", testSubmenu.getBoundingClientRect().height);
+    console.log("Visibility:", getComputedStyle(testSubmenu).visibility);
+    console.log("Display:", getComputedStyle(testSubmenu).display);
+});
+
+</script>
+<script src="/js/global.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Apex Faculty Portal</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/faculty/css/faculty-dashboard.css">
+<link rel="stylesheet" href="/faculty/css/profile.css">
+</head>
+
+<body>
+<div class="portal">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>Apex</h2>
+                <p>Faculty Portal</p>
+            </div>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="navigation">
+
+            <a href="/faculty/pages/faculty-dashboard.html" class="nav-link">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="/faculty/pages/my-subjects.html" class="nav-link">
+                <span>▤</span> My Subjects
+            </a>
+
+            <a href="/faculty/pages/my-students.html" class="nav-link">
+                <span>♙</span> My Students
+            </a>
+
+            <a href="/faculty/pages/attendance.html" class="nav-link">
+                <span>✓</span> Attendance
+            </a>
+
+            <a href="/faculty/pages/marks.html" class="nav-link">
+                <span>▧</span> Marks Management
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="/faculty/pages/profile.html"
+               class="nav-link active">
+                <span>⚙</span> Profile
+            </a>
+             <a href="/faculty/pages/settings.html" class="nav-link">
+    <span>⚙</span> Settings</a>
+
+            <button type="button" id="logoutBtn" class="logout-btn">
+                <span>↪</span> Logout
+            </button>
+
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">Faculty / Profile</p>
+                <h1>My Profile</h1>
+            </div>
+
+            <div class="profile-summary">
+                <div class="avatar" id="avatar">F</div>
+
+                <div>
+                    <strong id="topFacultyName">Loading...</strong>
+                    <p id="topFacultyId">Faculty ID</p>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- PROFILE CONTENT -->
+        <section class="profile-content">
+
+            <div class="page-heading">
+                <div>
+                    <p class="eyebrow">ACCOUNT INFORMATION</p>
+                    <h2>Faculty Profile</h2>
+                    <p>View your personal and contact information.</p>
+                </div>
+            </div>
+
+            <!-- PROFILE CARD -->
+            <section class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="large-avatar" id="profileAvatar">F</div>
+
+                    <div>
+                        <h2 id="profileName">Loading...</h2>
+                        <p id="profileFacultyId">Faculty ID</p>
+                        <span class="account-status">Faculty Account</span>
+                    </div>
+
+                </div>
+
+                <div class="profile-divider"></div>
+
+                <h3 class="details-heading">Personal Information</h3>
+
+                <div class="profile-details">
+
+                    <div class="detail-item">
+                        <span class="detail-icon">♙</span>
+                        <div>
+                            <label>Full Name</label>
+                            <strong id="facultyName">Loading...</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-icon">▣</span>
+                        <div>
+                            <label>Faculty ID</label>
+                            <strong id="facultyId">Loading...</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-icon">✉</span>
+                        <div>
+                            <label>Email Address</label>
+                            <strong id="facultyEmail">Loading...</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-icon">☎</span>
+                        <div>
+                            <label>Mobile Number</label>
+                            <strong id="facultyMobile">Loading...</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p id="profileMessage" class="profile-message" role="status">
+                    Loading profile information...
+                </p>
+
+            </section>
+
+            <footer class="footer">
+                © 2026 Apex Institute of Technology · Faculty Portal
+            </footer>
+
+        </section>
+
+    </main>
+</div>
+
+<script src="/faculty/js/profile.js"></script>
+</body>
+</html>

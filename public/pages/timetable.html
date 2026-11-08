@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Timetable | Apex Student Portal</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/timetable.css">
+</head>
+
+<body>
+<div class="portal-layout">
+
+    <!-- SIDEBAR: MATCHES MARKS.HTML -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">A</div>
+            <div class="brand-text">
+                <h2>APEX</h2>
+                <span>STUDENT PORTAL</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <div class="menu-title">MAIN MENU</div>
+
+            <a href="/pages/dashboard.html" class="nav-item">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="/pages/profile.html" class="nav-item">
+                <span class="nav-icon">○</span>
+                <span>My Profile</span>
+            </a>
+
+            <div class="academics-wrapper">
+
+                <button type="button"
+                        class="academics-toggle"
+                        id="academicsToggle"
+                        aria-expanded="true"
+                        aria-controls="academicsSubmenu">
+
+                    <span class="academics-title-left">
+                        <span class="nav-icon">▣</span>
+                        <span>Academics</span>
+                    </span>
+
+                    <span id="academicsArrow" class="academics-arrow">▾</span>
+                </button>
+
+                <div id="academicsSubmenu" class="academics-submenu show">
+
+                    <a href="/pages/attendance.html" class="academic-item">
+                        <span class="academic-icon">▣</span>
+                        <span>Attendance</span>
+                    </a>
+
+                    <a href="/pages/courses.html" class="academic-item">
+                        <span class="academic-icon">▤</span>
+                        <span>My Courses</span>
+                    </a>
+
+                    <a href="/pages/marks.html" class="academic-item">
+                        <span class="academic-icon">◈</span>
+                        <span>Marks</span>
+                    </a>
+
+                    <a href="/pages/grade-list.html" class="academic-item">
+                        <span class="academic-icon">★</span>
+                        <span>Grade List</span>
+                    </a>
+
+                    <a href="/pages/fees.html" class="academic-item">
+                        <span class="academic-icon">₹</span>
+                        <span>Fees</span>
+                    </a>
+
+                    <a href="/pages/hallticket.html" class="academic-item">
+                        <span class="academic-icon">▫</span>
+                        <span>Hall Ticket</span>
+                    </a>
+
+                    <a href="/pages/notices.html" class="academic-item">
+                        <span class="academic-icon">!</span>
+                        <span>Notices</span>
+                    </a>
+
+                    <a href="/pages/documents.html" class="academic-item">
+                        <span class="academic-icon">▫</span>
+                        <span>Documents</span>
+                    </a>
+
+                    <a href="/pages/timetable.html"
+                       class="academic-item active"
+                       data-page="timetable"
+                       aria-current="page">
+                        <span class="academic-icon">▦</span>
+                        <span>Timetable</span>
+                    </a>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="/pages/settings.html" class="nav-item">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a href="#" id="logoutButton" class="nav-item logout-item">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar" id="sidebarAvatar">S</div>
+
+                <div class="profile-info">
+                    <strong id="sidebarName">Student</strong>
+                    <span id="sidebarEnrollment">Enrollment</span>
+                </div>
+
+                <button type="button" class="profile-more">•••</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER: MATCHES MARKS.HTML -->
+        <header class="top-header">
+
+            <div class="header-left">
+                <div>
+                    <div class="college-name">
+                        APEX INSTITUTE OF TECHNOLOGY
+                    </div>
+                    <h1>Timetable</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+
+                <button type="button" class="header-icon" aria-label="Notifications">
+                    ♧
+                    <span class="header-notification-dot"></span>
+                </button>
+
+                <div class="header-profile">
+
+                    <div class="header-avatar" id="headerAvatar">S</div>
+
+                    <div class="header-profile-info">
+                        <strong id="headerName">Student</strong>
+                        <span id="headerEnrollment">Enrollment</span>
+                    </div>
+
+                    <span class="dropdown-arrow">▾</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- TIMETABLE CONTENT -->
+        <section class="timetable-content">
+
+            <div class="timetable-heading">
+                <div>
+                    <div class="timetable-label">ACADEMICS</div>
+                    <h2>Class Timetable</h2>
+                    <p>Your weekly class schedule.</p>
+                </div>
+
+                <button type="button" id="printTimetable"
+                        class="timetable-print-button">
+                    Print / Save PDF
+                </button>
+            </div>
+
+            <div class="timetable-student-info">
+                <div class="timetable-info-card">
+                    <span>Semester</span>
+                    <strong id="studentSemester">Loading...</strong>
+                </div>
+
+                <div class="timetable-info-card">
+                    <span>Section</span>
+                    <strong id="studentSection">Loading...</strong>
+                </div>
+
+                <div class="timetable-info-card">
+                    <span>Batch</span>
+                    <strong id="studentBatch">—</strong>
+                </div>
+            </div>
+
+            <p id="timetableMessage" class="timetable-message" role="status">
+                Loading your timetable...
+            </p>
+
+            <div class="timetable-table-wrapper">
+                <table class="timetable-table">
+
+                    <thead>
+                        <tr>
+                            <th class="day-column">Day</th>
+                            <th>S1<small>9:30–10:20</small></th>
+                            <th>S2<small>10:20–11:10</small></th>
+                            <th>S3<small>11:25–12:15</small></th>
+                            <th>S4<small>12:15–1:00</small></th>
+                            <th class="lunch-heading">
+                                LUNCH<small>1:00–2:00</small>
+                            </th>
+                            <th>S5<small>2:00–2:40</small></th>
+                            <th>S6<small>2:40–3:20</small></th>
+                            <th>S7<small>3:20–4:00</small></th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="timetableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="timetable-legend">
+                <span><i class="legend-dot scheduled-dot"></i> Scheduled class</span>
+                <span><i class="legend-dot free-dot"></i> Free session</span>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<script src="/js/global.js"></script>
+<script src="/js/timetable.js"></script>
+</body>
+</html>
